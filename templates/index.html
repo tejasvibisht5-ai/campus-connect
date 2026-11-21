@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusConnect | GEHU</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        /* ===============================
+           HOMEPAGE CLUBS AND EVENTS
+        =============================== */
+
+        .section .section-heading h2 {
+            font-size: 28px;
+            line-height: 1.3;
+        }
+
+        .section .section-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* CARD GRID */
+
+        .section .card-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        /* CARD */
+
+        .section .card-grid .card {
+            width: 100%;
+            min-width: 0;
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .section .card-grid .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        }
+
+        /* IMAGE */
+
+        .section .card-grid .card-image {
+            width: 100%;
+            height: 165px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .section .card-grid .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .section .card-grid .card:hover .card-image img {
+            transform: scale(1.04);
+        }
+
+        /* CARD CONTENT */
+
+        .section .card-grid .card-content {
+            padding: 17px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .section .card-grid .card-content h3 {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 7px;
+            color: #102b4e;
+        }
+
+        .section .card-grid .event-info {
+            font-size: 13px;
+            margin-bottom: 8px;
+            color: #4776a8;
+        }
+
+        .section .card-grid .card-content p {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 17px;
+            color: #58677b;
+            flex: 1;
+        }
+
+        /* BUTTONS */
+
+        .section .card-grid .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .section .card-grid .card-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-width: 0;
+            padding: 10px 7px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        .section .card-grid .view-details {
+            background: #eaf2ff;
+            color: #0875d1;
+            border: 1px solid #0875d1;
+        }
+
+        .section .card-grid .view-details:hover {
+            background: #0875d1;
+            color: #ffffff;
+        }
+
+        .section .card-grid .register-now {
+            background: #0875d1;
+            color: #ffffff;
+            border: 1px solid #0875d1;
+        }
+
+        .section .card-grid .register-now:hover {
+            background: #075ba3;
+        }
+
+        /* SEE MORE */
+
+        .section .see-more {
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+            .section .card-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .section .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section .section-heading h2 {
+                font-size: 23px;
+            }
+
+            .section .card-grid .card-image {
+                height: 180px;
+            }
+
+            .section .card-grid .card-content h3 {
+                font-size: 17px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Campus<span>Connect</span>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="#clubs">Clubs</a>
+
+        <a href="#events">Events</a>
+
+        <a href="{{ url_for('login') }}">Login</a>
+
+        <a class="register" href="{{ url_for('register') }}">
+            Register
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="university">
+            GRAPHIC ERA HILL UNIVERSITY
+        </div>
+
+        <h1>
+            Welcome to<br>
+            Campus <span>Connect</span>
+        </h1>
+
+        <p>
+            Discover exciting campus events, explore different clubs,
+            showcase your talents and connect with students.
+            Be a part of your university community!
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="explore-events" href="#events">
+                Explore Events
+            </a>
+
+            <a class="explore-clubs" href="#clubs">
+                Explore Clubs
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CLUBS SECTION -->
+
+<section class="section" id="clubs">
+
+    <div class="section-heading">
+
+        <h2>Explore Campus Clubs</h2>
+
+        <a class="see-more" href="{{ url_for('clubs_page') }}">
+            See More →
+        </a>
+
+    </div>
+
+    <p class="section-description">
+        Discover your interests, develop new skills and become a
+        part of different campus communities.
+    </p>
+
+    <div class="card-grid">
+
+        {% for club in clubs %}
+
+        <article class="card">
+
+            <!-- CLUB IMAGE -->
+
+            <div class="card-image">
+
+                {% set club_name = club.name|lower %}
+                {% set category = (club.category or '')|lower %}
+
+                {% if 'swaragini' in club_name %}
+
+                    <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=85"
+                         alt="Swaragini Music Club">
+                 {% elif 'uttrayini' in club_name %}
+
+    <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Chanchari_dance.jpg?width=900"
+        alt="Uttarakhand Chanchari Folk Dance">
+                {% elif 'dance' in club_name or 'dance' in category %}
+
+                    <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=900&q=85"
+                         alt="Dance Club">
+
+                {% elif 'coding' in club_name or 'technology' in category or 'tech' in category %}
+
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+                         alt="Coding Club">
+
+                {% elif 'sport' in club_name or 'sport' in category %}
+
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=85"
+                         alt="Sports Club">
+
+                {% elif 'photo' in club_name or 'photography' in category %}
+
+                    <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=900&q=85"
+                         alt="Photography Club">
+
+                {% elif 'art' in club_name or 'art' in category %}
+
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85"
+                         alt="Art Club">
+
+                {% else %}
+
+                    <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=85"
+                         alt="Campus Club">
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- CLUB DETAILS -->
+
+            <div class="card-content">
+
+                <h3>{{ club.name }}</h3>
+
+                <div class="event-info">
+                    {{ club.category or 'University Club' }}
+                </div>
+
+                <p>
+                    {{ club.description or 'Discover activities, develop your skills and connect with fellow students.' }}
+                </p>
+
+                <!-- CLUB BUTTONS -->
+
+                <div class="card-actions">
+
+                    <a
+                        class="card-button view-details"
+                        href="{{ url_for('club_details', club_id=club.id) }}">
+                        View Details
+                    </a>
+
+                    <a
+                        class="card-button register-now"
+                        href="{{ url_for('join_club', club_id=club.id) }}">
+                        Join Club
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        {% else %}
+
+        <p>No clubs available right now.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- EVENTS SECTION -->
+
+<section class="section events-section" id="events">
+
+    <div class="section-heading">
+
+        <h2>Upcoming Campus Events</h2>
+
+        <a class="see-more" href="{{ url_for('events_page') }}">
+            See More →
+        </a>
+
+    </div>
+
+    <p class="section-description">
+        Participate in exciting events, competitions, workshops
+        and celebrations happening around your campus.
+    </p>
+
+    <div class="card-grid">
+
+        {% for event in events %}
+
+        <article class="card">
+
+            <!-- EVENT IMAGE -->
+
+            <div class="card-image">
+
+                {% set event_name = event.name|lower %}
+
+                {% if 'hackathon' in event_name or 'coding' in event_name %}
+
+                    <img
+                        src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900"
+                        alt="Student Hackathon">
+
+                {% elif 'cultural' in event_name or 'music' in event_name or 'fest' in event_name %}
+
+                    <img
+                        src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=900"
+                        alt="Cultural Fest">
+
+                {% elif 'sport' in event_name %}
+
+                    <img
+                        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900"
+                        alt="Sports Event">
+
+                {% elif 'blood' in event_name %}
+
+                    <img
+                        src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=900"
+                        alt="Blood Donation Camp">
+
+                {% elif 'tree' in event_name or 'plantation' in event_name %}
+
+                    <img
+                        src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900"
+                        alt="Tree Plantation">
+
+                {% else %}
+
+                    <img
+                        src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900"
+                        alt="Campus Event">
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- EVENT DETAILS -->
+
+            <div class="card-content">
+
+                <div class="event-info">
+                    {{ event.date }} | {{ event.time }}
+                </div>
+
+                <h3>
+                    {{ event.icon }} {{ event.name }}
+                </h3>
+
+                <p>
+                    {{ event.description or 'Join this campus event and participate in exciting university activities.' }}
+                </p>
+
+                <!-- EVENT BUTTONS -->
+
+                <div class="card-actions">
+
+                    <a
+                        class="card-button view-details"
+                        href="{{ url_for('event_details', event_id=event.id) }}">
+                        View Details
+                    </a>
+
+                    <a
+                        class="card-button register-now"
+                        href="{{ url_for('register_event', event_id=event.id) }}">
+                        Register Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+        {% else %}
+
+        <p>No events available right now.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="about">
+
+    <h2>About CampusConnect</h2>
+
+    <p>
+        CampusConnect is a campus event and club management
+        platform developed for Graphic Era Hill University.
+        It provides students with one place to discover campus
+        events, explore clubs, participate in activities and
+        connect with the university community.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>CampusConnect | GEHU</h3>
+
+    <p>Connecting Students, Events and Clubs.</p>
+
+    <p>Graphic Era Hill University, Dehradun</p>
+
+    <p>© 2026 CampusConnect. All Rights Reserved.</p>
+
+</footer>
+
+
+</body>
+</html>

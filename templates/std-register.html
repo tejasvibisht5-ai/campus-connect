@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            width: 100%;
+            padding-right: 48px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        .strength-track {
+            height: 7px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            transition: 0.3s;
+            background: #dc3545;
+        }
+
+        .strength-text {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="{{ url_for('home') }}" class="brand">
+        <img src="{{ url_for('static', filename='gehu.jpeg') }}"
+             class="navbar-logo" alt="GEHU Logo">
+        <span>Campus</span><span>Connect</span>
+    </a>
+
+    <div class="navlinks">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('events_page') }}">Events</a>
+        <a href="{{ url_for('clubs_page') }}">Clubs</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</nav>
+
+<main class="student-register-page">
+
+    <div class="student-form-card">
+
+        <div class="student-form-heading">
+            <div class="student-form-icon">&#127891;</div>
+
+            <span class="student-form-label">
+                GRAPHIC ERA HILL UNIVERSITY
+            </span>
+
+            <h1>Student Registration</h1>
+
+            <p>
+                Create your CampusConnect account and become
+                part of our campus community.
+            </p>
+        </div>
+
+        <div class="student-form-divider"></div>
+
+        <form method="POST" action="{{ url_for('student_register') }}">
+
+            <h2 class="form-section-title">
+                Personal & Academic Details
+            </h2>
+
+            <div class="student-form-grid">
+
+                <div class="input-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Enter your full name"
+                           autocomplete="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="student_id">Student ID *</label>
+                    <input type="text" id="student_id" name="student_id"
+                           placeholder="Enter your student ID" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Enter your email"
+                           autocomplete="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone"
+                           placeholder="Enter your phone number"
+                           autocomplete="tel" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="department">Department *</label>
+                    <select id="department" name="department" required>
+                        <option value="" disabled selected>Select department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Management">Management</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="year">Academic Year *</label>
+                    <select id="year" name="year" required>
+                        <option value="" disabled selected>Select academic year</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                    </select>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="password">Create Password *</label>
+
+                    <div class="password-wrapper">
+                        <input type="password" id="password"
+                               name="password"
+                               placeholder="Create a password"
+                               autocomplete="new-password"
+                               minlength="8" required>
+
+                        <button type="button"
+                                class="toggle-password"
+                                id="togglePassword"
+                                aria-label="Show password">
+                            👁
+                        </button>
+                    </div>
+
+                    <div class="strength-track">
+                        <div class="strength-fill" id="strengthFill"></div>
+                    </div>
+
+                    <small class="strength-text" id="strengthText">
+                        Use at least 8 characters.
+                    </small>
+                </div>
+
+            </div>
+
+            <button type="submit" class="student-submit-btn">
+                Create Student Account
+                <span>→</span>
+            </button>
+
+            <p class="student-login-link">
+                Already registered?
+                <a href="{{ url_for('login') }}">Login here</a>
+            </p>
+
+        </form>
+
+    </div>
+
+    <p class="student-page-footer">
+        CampusConnect · Graphic Era Hill University
+    </p>
+
+</main>
+
+<script>
+    const password = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+    const strengthFill = document.getElementById("strengthFill");
+    const strengthText = document.getElementById("strengthText");
+
+    togglePassword.addEventListener("click", function () {
+        const isHidden = password.type === "password";
+
+        password.type = isHidden ? "text" : "password";
+        togglePassword.textContent = isHidden ? "🙈" : "👁";
+        togglePassword.setAttribute(
+            "aria-label",
+            isHidden ? "Hide password" : "Show password"
+        );
+    });
+
+    password.addEventListener("input", function () {
+        const value = password.value;
+        let score = 0;
+
+        if (value.length >= 8) score++;
+        if (/[A-Z]/.test(value)) score++;
+        if (/[a-z]/.test(value)) score++;
+        if (/[0-9]/.test(value)) score++;
+        if (/[^A-Za-z0-9]/.test(value)) score++;
+
+        const levels = [
+            { width: "0%", text: "Use at least 8 characters.", color: "#dc3545" },
+            { width: "20%", text: "Very Weak", color: "#dc3545" },
+            { width: "40%", text: "Weak", color: "#fd7e14" },
+            { width: "60%", text: "Fair", color: "#ffc107" },
+            { width: "80%", text: "Good", color: "#0d6efd" },
+            { width: "100%", text: "Strong", color: "#198754" }
+        ];
+
+        const level = value.length === 0
+            ? levels[0]
+            : levels[score];
+
+        strengthFill.style.width = level.width;
+        strengthFill.style.background = level.color;
+        strengthText.textContent = level.text;
+    });
+</script>
+
+</body>
+</html>

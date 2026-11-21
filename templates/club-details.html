@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ club.name }} | CampusConnect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #172b4d;
+        }
+
+        nav {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+
+        .logo {
+            color: #0b1f3a;
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #1763b6;
+        }
+
+        nav a {
+            color: #244064;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero {
+            padding: 65px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(120deg, #0b1f3a, #1763b6);
+        }
+
+        .hero small {
+            color: #c8dcff;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin: 15px 0 10px;
+        }
+
+        .hero p {
+            color: #e1ecff;
+            font-size: 15px;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1000px;
+            margin: 45px auto;
+        }
+
+        .details-card {
+            background: white;
+            padding: 35px;
+            border-radius: 13px;
+            box-shadow: 0 6px 24px rgba(20,50,90,.07);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eaf2ff;
+            color: #1557a6;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 23px;
+            margin: 25px 0 12px;
+            color: #0b1f3a;
+        }
+
+        .description {
+            color: #62738a;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .info-box {
+            background: #f5f8fd;
+            padding: 18px;
+            border-radius: 9px;
+            border: 1px solid #e6edf7;
+        }
+
+        .info-box small {
+            display: block;
+            color: #718198;
+            margin-bottom: 7px;
+            font-size: 12px;
+        }
+
+        .info-box strong {
+            color: #173b68;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .highlight {
+            margin-top: 25px;
+            padding: 22px;
+            background: #eef5ff;
+            border-left: 4px solid #1763b6;
+            border-radius: 7px;
+        }
+
+        .highlight h3 {
+            margin-bottom: 9px;
+            color: #123d70;
+        }
+
+        .highlight p {
+            color: #62738a;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .join {
+            background: #1557a6;
+            color: white;
+        }
+
+        .back {
+            background: #eaf2ff;
+            color: #1557a6;
+            border: 1px solid #1557a6;
+        }
+
+        footer {
+            background: #0b1f3a;
+            color: #dce7f7;
+            text-align: center;
+            padding: 23px;
+            font-size: 13px;
+            margin-top: 60px;
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .details-card {
+                padding: 22px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a class="logo" href="{{ url_for('home') }}">
+        Campus<span>Connect</span>
+    </a>
+
+    <a href="{{ url_for('clubs_page') }}">← All Clubs</a>
+</nav>
+
+<section class="hero">
+    <small>CAMPUS CONNECT • GEHU</small>
+    <h1>{{ club.name }}</h1>
+    <p>Discover your interests. Build skills. Be part of the community.</p>
+</section>
+
+<main class="container">
+
+    <section class="details-card">
+
+        <span class="tag">{{ club.category }}</span>
+
+        <h2>About the Club</h2>
+
+        <p class="description">
+            {{ club.description }}
+        </p>
+
+        <h2>Club Information</h2>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <small>Club Name</small>
+                <strong>{{ club.name }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Category</small>
+                <strong>{{ club.category }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Faculty Coordinator</small>
+                <strong>{{ club.faculty }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Contact Email</small>
+                <strong>{{ club.email }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Contact Number</small>
+                <strong>{{ club.phone }}</strong>
+            </div>
+
+        </div>
+
+        <div class="highlight">
+            <h3>Be a Part of Something Exciting!</h3>
+            <p>
+                Connect with fellow students, explore new opportunities
+                and take part in activities related to your interests.
+                Join the club and make your campus experience more engaging.
+            </p>
+        </div>
+
+        <div class="actions">
+            <a class="btn join"
+               href="{{ url_for('join_club', club_id=club.id) }}">
+                Join This Club
+            </a>
+
+            <a class="btn back"
+               href="{{ url_for('clubs_page') }}">
+                Explore Other Clubs
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 CampusConnect | Graphic Era Hill University
+</footer>
+
+</body>
+</html>

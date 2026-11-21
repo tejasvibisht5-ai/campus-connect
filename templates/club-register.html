@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Club Admin Registration - CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            width: 100%;
+            padding-right: 48px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        .strength-track {
+            height: 7px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            transition: 0.3s;
+            background: #dc3545;
+        }
+
+        .strength-text {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="{{ url_for('home') }}" class="brand">
+        <span class="brand-icon">&#127891;</span>
+        Campus<span>Connect</span>
+    </a>
+
+    <div class="navlinks">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('events_page') }}">Events</a>
+        <a href="{{ url_for('clubs_page') }}">Clubs</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+
+</nav>
+
+<div class="auth-page">
+
+    <div class="form-box">
+
+        <div class="login-icon">
+            &#128101;
+        </div>
+
+        <h1>Club Admin Registration</h1>
+
+        <p class="login-subtitle">
+            Register your university club on CampusConnect
+        </p>
+
+        <form method="POST"
+              action="{{ url_for('club_register') }}">
+
+            <!-- CLUB NAME -->
+            <div class="input-group">
+                <label>Club Name *</label>
+
+                <input type="text"
+                       name="club_name"
+                       placeholder="Enter club name"
+                       required>
+            </div>
+
+            <!-- CATEGORY AND FACULTY NAME -->
+            <div class="form-row">
+
+                <div class="input-group">
+                    <label>Category *</label>
+
+                    <select name="category" required>
+                        <option value="" disabled selected>
+                            Select Category
+                        </option>
+
+                        <option value="Technology">Technology</option>
+                        <option value="Cultural">Cultural</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Literary">Literary</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Faculty Coordinator *</label>
+
+                    <input type="text"
+                           name="faculty"
+                           placeholder="Enter faculty name"
+                           required>
+                </div>
+
+            </div>
+
+            <!-- FACULTY EMAIL -->
+            <div class="input-group">
+                <label for="faculty_email">
+                    Faculty Coordinator University Email *
+                </label>
+
+                <input type="email"
+                       id="faculty_email"
+                       name="faculty_email"
+                       placeholder="Enter registered faculty email"
+                       autocomplete="email"
+                       required>
+
+                <small style="display:block; margin-top:6px; color:#718096;">
+                    Enter the email used by the faculty during
+                    CampusConnect registration.
+                </small>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="input-group">
+                <label>Club Description *</label>
+
+                <textarea name="description"
+                          rows="4"
+                          placeholder="Describe your club..."
+                          required></textarea>
+            </div>
+
+            <!-- CLUB EMAIL -->
+            <div class="input-group">
+                <label>Email Address *</label>
+
+                <input type="email"
+                       name="email"
+                       placeholder="Enter club email"
+                       autocomplete="email"
+                       required>
+            </div>
+
+            <!-- PHONE -->
+            <div class="input-group">
+                <label>Phone Number *</label>
+
+                <input type="tel"
+                       name="phone"
+                       placeholder="Enter contact number"
+                       autocomplete="tel"
+                       required>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="input-group">
+                <label>Password *</label>
+
+                <div class="password-wrapper">
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Create a password"
+                           autocomplete="new-password"
+                           minlength="8"
+                           required>
+
+                    <button type="button"
+                            class="toggle-password"
+                            id="togglePassword"
+                            aria-label="Show password">
+                        👁
+                    </button>
+                </div>
+
+                <div class="strength-track">
+                    <div class="strength-fill"
+                         id="strengthFill"></div>
+                </div>
+
+                <small class="strength-text" id="strengthText">
+                    Use at least 8 characters.
+                </small>
+            </div>
+
+            <!-- SUBMIT -->
+            <button type="submit" class="login-button">
+                Register Club
+            </button>
+
+        </form>
+
+        <p class="register-text">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Login here</a>
+        </p>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <div>
+        <div class="footer-brand">
+            &#127891; Campus<span>Connect</span>
+        </div>
+
+        <p>Graphic Era Hill University</p>
+    </div>
+
+    <p>© 2026 CampusConnect</p>
+
+</footer>
+
+<script>
+    const password = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+    const strengthFill = document.getElementById("strengthFill");
+    const strengthText = document.getElementById("strengthText");
+
+    // SHOW / HIDE PASSWORD
+    togglePassword.addEventListener("click", function () {
+        const isHidden = password.type === "password";
+
+        password.type = isHidden ? "text" : "password";
+        togglePassword.textContent = isHidden ? "🙈" : "👁";
+
+        togglePassword.setAttribute(
+            "aria-label",
+            isHidden ? "Hide password" : "Show password"
+        );
+    });
+
+    // PASSWORD STRENGTH CHECK
+    password.addEventListener("input", function () {
+        const value = password.value;
+        let score = 0;
+
+        if (value.length >= 8) score++;
+        if (/[A-Z]/.test(value)) score++;
+        if (/[a-z]/.test(value)) score++;
+        if (/[0-9]/.test(value)) score++;
+        if (/[^A-Za-z0-9]/.test(value)) score++;
+
+        const levels = [
+            {
+                width: "0%",
+                text: "Use at least 8 characters.",
+                color: "#dc3545"
+            },
+            {
+                width: "20%",
+                text: "Very Weak",
+                color: "#dc3545"
+            },
+            {
+                width: "40%",
+                text: "Weak",
+                color: "#fd7e14"
+            },
+            {
+                width: "60%",
+                text: "Fair",
+                color: "#ffc107"
+            },
+            {
+                width: "80%",
+                text: "Good",
+                color: "#0d6efd"
+            },
+            {
+                width: "100%",
+                text: "Strong",
+                color: "#198754"
+            }
+        ];
+
+        const level = value.length === 0
+            ? levels[0]
+            : levels[score];
+
+        strengthFill.style.width = level.width;
+        strengthFill.style.background = level.color;
+        strengthText.textContent = level.text;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | CampusConnect - GEHU</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .register-role-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+    </style>
+</head>
+<body class="register-page">
+
+    <nav class="navbar">
+        <a href="{{ url_for('home') }}" class="brand">
+            <img src="{{ url_for('static', filename='gehu.jpeg') }}"
+                 class="navbar-logo" alt="GEHU Logo">
+            <span>Campus</span><span>Connect</span>
+        </a>
+
+        <div class="navlinks">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('events_page') }}">Events</a>
+            <a href="{{ url_for('clubs_page') }}">Clubs</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        </div>
+    </nav>
+
+    <main class="register-main">
+
+        <div class="register-heading">
+            <span class="register-eyebrow">
+                GRAPHIC ERA HILL UNIVERSITY
+            </span>
+
+            <h1>Create Your Account</h1>
+
+            <p>
+                Your campus journey starts here. Choose your account
+                type and connect with the GEHU community.
+            </p>
+        </div>
+
+        <div class="register-role-cards">
+
+            <!-- STUDENT CARD -->
+            <a href="{{ url_for('student_register') }}"
+               class="register-role-card student-role">
+
+                <div class="register-card-top">
+                    <div class="register-role-icon student-icon">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <path d="M4 23 32 9l28 14-28 14L4 23Z"
+                                  fill="currentColor"/>
+                            <path d="M16 30v14c9 8 23 8 32 0V30L32 38 16 30Z"
+                                  fill="currentColor" opacity=".75"/>
+                            <path d="M56 25v17"
+                                  stroke="currentColor" stroke-width="4"
+                                  stroke-linecap="round"/>
+                            <circle cx="56" cy="46" r="4"
+                                    fill="currentColor"/>
+                        </svg>
+                    </div>
+
+                    <span class="register-card-number">01</span>
+                </div>
+
+                <span class="register-role-label">FOR STUDENTS</span>
+
+                <h2>Student Registration</h2>
+
+                <p>
+                    Explore campus events, join exciting clubs,
+                    meet fellow students and make the most of
+                    your university life.
+                </p>
+
+                <ul class="register-benefits">
+                    <li><span>✓</span> Discover campus events</li>
+                    <li><span>✓</span> Join your favourite clubs</li>
+                    <li><span>✓</span> Manage your student profile</li>
+                </ul>
+
+                <span class="register-card-button">
+                    Register as Student <span>→</span>
+                </span>
+
+            </a>
+
+            <!-- FACULTY CARD -->
+            <a href="{{ url_for('faculty_register') }}"
+               class="register-role-card faculty-role">
+
+                <div class="register-card-top">
+                    <div class="register-role-icon faculty-icon">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <circle cx="32" cy="17" r="11"
+                                    fill="currentColor"/>
+                            <path d="M10 55c0-14 9-23 22-23s22 9 22 23v3H10v-3Z"
+                                  fill="currentColor"/>
+                            <path d="M23 34v-5h18v5"
+                                  stroke="currentColor"
+                                  stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <span class="register-card-number">02</span>
+                </div>
+
+                <span class="register-role-label">FOR FACULTY</span>
+
+                <h2>Faculty Registration</h2>
+
+                <p>
+                    Connect with campus clubs, coordinate activities,
+                    view club members and stay updated with
+                    university events.
+                </p>
+
+                <ul class="register-benefits">
+                    <li><span>✓</span> Manage assigned clubs</li>
+                    <li><span>✓</span> View club students</li>
+                    <li><span>✓</span> Track campus activities</li>
+                </ul>
+
+                <span class="register-card-button">
+                    Register as Faculty <span>→</span>
+                </span>
+
+            </a>
+
+            <!-- CLUB CARD -->
+            <a href="{{ url_for('club_register') }}"
+               class="register-role-card club-role">
+
+                <div class="register-card-top">
+                    <div class="register-role-icon club-icon">
+                        <svg viewBox="0 0 64 64" aria-hidden="true">
+                            <circle cx="23" cy="20" r="10"
+                                    fill="currentColor"/>
+                            <circle cx="44" cy="23" r="8"
+                                    fill="currentColor" opacity=".7"/>
+                            <path d="M5 51c0-11 8-18 18-18s18 7 18 18v3H5v-3Z"
+                                  fill="currentColor"/>
+                            <path d="M38 37c3-3 6-4 10-4 8 0 13 6 13 15v6H43v-3c0-6-2-11-5-14Z"
+                                  fill="currentColor" opacity=".7"/>
+                        </svg>
+                    </div>
+
+                    <span class="register-card-number">03</span>
+                </div>
+
+                <span class="register-role-label">FOR CLUBS</span>
+
+                <h2>Club Registration</h2>
+
+                <p>
+                    Build your club community, connect with
+                    students, manage members and promote
+                    activities across the university.
+                </p>
+
+                <ul class="register-benefits">
+                    <li><span>✓</span> Connect with students</li>
+                    <li><span>✓</span> Manage club members</li>
+                    <li><span>✓</span> Grow your campus community</li>
+                </ul>
+
+                <span class="register-card-button">
+                    Register as Club <span>→</span>
+                </span>
+
+            </a>
+
+        </div>
+
+        <div class="register-login-prompt">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Login here</a>
+        </div>
+
+        <div class="register-footer">
+            <span class="register-footer-mark">CC</span>
+            <span>CampusConnect</span>
+            <span class="register-footer-dot">•</span>
+            <span>Graphic Era Hill University</span>
+        </div>
+
+    </main>
+
+</body>
+</html>

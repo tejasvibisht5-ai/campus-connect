@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Register - CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <a href="{{ url_for('home') }}" class="brand">
+
+        <img src="{{ url_for('static', filename='gehu-logo.jpg') }}"
+             class="navbar-logo"
+             alt="GEHU Logo">
+
+        <span>Campus</span><span>Connect</span>
+
+    </a>
+
+
+    <div class="navlinks">
+
+        <a href="{{ url_for('home') }}">
+            Home
+        </a>
+
+        <a href="{{ url_for('events_page') }}">
+            Events
+        </a>
+
+        <a href="{{ url_for('clubs_page') }}">
+            Clubs
+        </a>
+
+        <a href="{{ url_for('login') }}">
+            Login
+        </a>
+
+        <a href="{{ url_for('register') }}">
+            Register
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<section class="auth-page">
+
+
+    <div class="register-choice">
+
+
+        <div class="login-icon">
+            &#128100;
+        </div>
+
+
+        <h1>
+            Create Your Account
+        </h1>
+
+
+        <p class="login-subtitle">
+            Choose your account type to get started
+        </p>
+
+
+
+        <div class="role-cards">
+
+
+            <!-- STUDENT -->
+
+            <a href="{{ url_for('student_register') }}"
+               class="role-card">
+
+                <div class="role-icon">
+                    &#127891;
+                </div>
+
+                <h2>
+                    Student
+                </h2>
+
+                <p>
+                    Register as a student to discover events,
+                    join clubs and connect with other students.
+                </p>
+
+                <span>
+                    Register as Student →
+                </span>
+
+            </a>
+
+
+
+            <!-- CLUB -->
+
+            <a href="{{ url_for('club_register') }}"
+               class="role-card">
+
+                <div class="role-icon">
+                    &#128101;
+                </div>
+
+                <h2>
+                    Club
+                </h2>
+
+                <p>
+                    Register your club, manage members and
+                    connect with students across campus.
+                </p>
+
+                <span>
+                    Register as Club →
+                </span>
+
+            </a>
+
+
+        </div>
+
+
+
+        <p class="register-text">
+
+            Already have an account?
+
+            <a href="{{ url_for('login') }}">
+                Login here
+            </a>
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+</body>
+
+</html>

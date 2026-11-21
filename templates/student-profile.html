@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f2fa;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .profile-container {
+            max-width: 650px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(40, 20, 70, 0.12);
+        }
+
+        h1 {
+            color: #39205f;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .profile-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #f5f0fc;
+            border-radius: 9px;
+        }
+
+        .profile-item strong {
+            display: block;
+            color: #65449a;
+            margin-bottom: 7px;
+        }
+
+        .profile-item span {
+            color: #333;
+            overflow-wrap: anywhere;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            padding: 12px 25px;
+            background: #563482;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back-btn:hover {
+            background: #39205f;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-container">
+
+        <h1>Student Profile</h1>
+        <p class="subtitle">CampusConnect Student Information</p>
+
+        <div class="profile-item">
+            <strong>Student Name</strong>
+            <span>{{ student.name }}</span>
+        </div>
+
+        <div class="profile-item">
+            <strong>Student ID</strong>
+            <span>{{ student.student_id }}</span>
+        </div>
+
+        <div class="profile-item">
+            <strong>Email Address</strong>
+            <span>{{ student.email }}</span>
+        </div>
+
+        <div class="profile-item">
+            <strong>Department</strong>
+            <span>{{ student.department }}</span>
+        </div>
+
+        <div class="profile-item">
+            <strong>Academic Year</strong>
+            <span>{{ student.year }}</span>
+        </div>
+
+        <div class="profile-item">
+            <strong>Phone Number</strong>
+            <span>{{ student.phone }}</span>
+        </div>
+
+        <a href="{{ url_for('students_list') }}" class="back-btn">
+            Back to Students
+        </a>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - CampusConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .role-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 18px 0;
+        }
+
+        .role-option {
+            padding: 13px;
+            border: 2px solid #d7e1ef;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            font-weight: 600;
+            color: #17365d;
+        }
+
+        .role-option.selected {
+            border-color: #1760b0;
+            background: #eaf3ff;
+        }
+
+        .role-option input {
+            margin-right: 6px;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group input {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 48px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        .login-error {
+            color: #b42318;
+            background: #fff0ef;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="{{ url_for('home') }}" class="brand">
+        <img src="{{ url_for('static', filename='gehu-logo.jpg') }}"
+             class="navbar-logo" alt="GEHU Logo">
+        <span>Campus</span><span>Connect</span>
+    </a>
+
+    <div class="navlinks">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('events_page') }}">Events</a>
+        <a href="{{ url_for('clubs_page') }}">Clubs</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</nav>
+
+<section class="auth-page">
+    <div class="login-box">
+
+        <div class="login-icon">&#128274;</div>
+        <h1>Welcome Back!</h1>
+        <p class="login-subtitle">Choose your account type to continue</p>
+
+        {% if error %}
+            <div class="login-error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="{{ url_for('login') }}">
+
+            <label><strong>Login As</strong></label>
+
+            <div class="role-options">
+
+                <label class="role-option">
+                    <input type="radio" name="role" value="student" required>
+                    🎓 Student
+                </label>
+
+                <label class="role-option">
+                    <input type="radio" name="role" value="faculty" required>
+                    👨‍🏫 Faculty
+                </label>
+
+                <label class="role-option">
+                    <input type="radio" name="role" value="club_admin" required>
+                    👥 Club Admin
+                </label>
+
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password"
+                           placeholder="Enter your password" required>
+
+                    <button type="button" class="toggle-password"
+                            onclick="togglePassword()"
+                            aria-label="Show password">
+                        👁️
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" class="login-button">Login →</button>
+
+        </form>
+
+        <p class="register-text">
+    New Student?
+    <a href="{{ url_for('register') }}">Create Student Account</a>
+</p>
+
+<p class="register-text">
+    New Faculty?
+    <a href="{{ url_for('faculty_register') }}">Faculty Registration</a>
+</p>
+
+<p class="register-text">
+    New Club Admin?
+    <a href="{{ url_for('club_register') }}">Club Registration</a>
+</p>
+
+    </div>
+</section>
+
+<script>
+    const roleOptions = document.querySelectorAll('.role-option');
+
+    roleOptions.forEach(option => {
+        option.querySelector('input').addEventListener('change', () => {
+            roleOptions.forEach(item => item.classList.remove('selected'));
+            option.classList.add('selected');
+        });
+    });
+
+    function togglePassword() {
+        const password = document.getElementById('password');
+        const button = document.querySelector('.toggle-password');
+
+        if (password.type === 'password') {
+            password.type = 'text';
+            button.textContent = '🙈';
+            button.setAttribute('aria-label', 'Hide password');
+        } else {
+            password.type = 'password';
+            button.textContent = '👁️';
+            button.setAttribute('aria-label', 'Show password');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4132 @@
+/* =====================================================
+   CAMPUSCONNECT - COMPLETE STYLE SHEET
+   GRAPHIC ERA HILL UNIVERSITY
+   ===================================================== */
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #0b1f3a;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
+
+.navbar {
+    height: 76px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    box-shadow: 0 2px 10px rgba(11, 31, 58, 0.08);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    color: #0b1f3a;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.brand span:last-child {
+    color: #1557a6;
+}
+
+.brand-icon {
+    font-size: 27px;
+    margin-right: 10px;
+}
+
+
+/* NAV LINKS */
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.navlinks a {
+    color: #19324f;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.navlinks a:hover {
+    color: #1557a6;
+}
+
+
+/* GET STARTED */
+
+.nav-btn {
+    background: #1557a6 !important;
+    color: white !important;
+
+    padding: 13px 23px;
+
+    border-radius: 7px;
+
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background: #0b3d7a !important;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.hero {
+    min-height: 500px;
+
+    padding: 70px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    /*
+       GEHU CAMPUS BACKGROUND
+    */
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 28, 57, 0.95) 0%,
+            rgba(5, 45, 90, 0.82) 45%,
+            rgba(5, 45, 90, 0.28) 100%
+        ),
+       url("/static/gehu-campus.jpg");
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    max-width: 650px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* SMALL UNIVERSITY TEXT */
+
+.eyebrow {
+    color: #62c7ff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+/* HERO HEADING */
+
+.hero h1 {
+    color: white;
+
+    font-size: 58px;
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #078cff;
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero p {
+    color: #f1f5f9;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    max-width: 620px;
+
+    margin-bottom: 28px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 13px 25px;
+
+    background: #078cff;
+
+    color: white;
+
+    border: 1px solid #078cff;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.hero-btn:hover {
+    background: #006dcc;
+    transform: translateY(-2px);
+}
+
+
+/* OUTLINE BUTTON */
+
+.hero-btn.outline {
+    background: transparent;
+
+    border: 1px solid white;
+}
+
+.hero-btn.outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =====================================================
+   SMALL GEHU LOGO
+   ===================================================== */
+
+.logo-box {
+    width: 210px;
+    height: 105px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+.logo-box img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+}
+
+/* =====================================================
+   COMMON SECTION
+   ===================================================== */
+
+.section {
+    padding: 55px 7%;
+
+    background: #ffffff;
+}
+
+.clubs-section {
+    background: #eef7ff;
+}
+
+
+/* SECTION HEADER */
+
+.section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+.section-head h2 {
+    color: #0b1f3a;
+
+    font-size: 30px;
+
+    margin-bottom: 6px;
+}
+
+.section-head p {
+    color: #60758a;
+
+    font-size: 15px;
+}
+
+
+/* VIEW BUTTON */
+
+.view-btn {
+    border: 1px solid #1687e8;
+
+    color: #1557a6;
+
+    padding: 11px 18px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    background: white;
+
+    transition: 0.2s;
+}
+
+.view-btn:hover {
+    background: #1557a6;
+    color: white;
+}
+
+
+/* =====================================================
+   CARDS GRID
+   ===================================================== */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+/* =====================================================
+   EVENT CARD
+   ===================================================== */
+
+.event-card {
+    background: white;
+
+    border: 1px solid #dbe4ee;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 20px rgba(11, 31, 58, 0.08);
+
+    transition: 0.25s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(11, 31, 58, 0.13);
+}
+
+
+/* EVENT TOP */
+
+.event-top {
+    height: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b1f3a,
+            #1687e8
+        );
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.event-icon {
+    font-size: 42px;
+}
+
+
+/* EVENT BODY */
+
+.event-body {
+    padding: 17px;
+}
+
+.date {
+    display: inline-block;
+
+    background: #e7f1ff;
+
+    color: #1557a6;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.event-body h3 {
+    font-size: 19px;
+
+    color: #0b1f3a;
+
+    margin-bottom: 12px;
+}
+
+.meta {
+    color: #60758a;
+
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+
+/* =====================================================
+   COMMON CARD BUTTON
+   ===================================================== */
+
+.card-btn {
+    display: block;
+
+    width: 100%;
+
+    background: #078cff;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 11px;
+
+    margin-top: 15px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.card-btn:hover {
+    background: #006dcc;
+}
+
+
+/* =====================================================
+   CLUB CARD
+   ===================================================== */
+
+.club-card {
+    background: white;
+
+    border: 1px solid #dbe4ee;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 7px 20px rgba(11, 31, 58, 0.07);
+
+    transition: 0.25s;
+}
+
+.club-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(11, 31, 58, 0.12);
+}
+
+
+/* =====================================================
+   CLUB VISUALS
+   ===================================================== */
+
+.club-photo {
+    width: 100%;
+    height: 125px;
+
+    border-radius: 10px;
+
+    margin-bottom: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* CODING CLUB */
+
+.coding-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #063b91,
+            #1687e8
+        );
+}
+
+
+/* CULTURAL CLUB */
+
+.cultural-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #6a0dad,
+            #e52ca5
+        );
+}
+
+
+/* SPORTS CLUB */
+
+.sports-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #08752c,
+            #42c95a
+        );
+}
+
+
+/* LITERARY CLUB */
+
+.literary-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #b84b00,
+            #ff9d2e
+        );
+}
+
+
+/* OTHER CLUB */
+
+.other-photo {
+    background:
+        linear-gradient(
+            135deg,
+            #1557a6,
+            #5d8fd4
+        );
+}
+
+
+/* BIG ICON */
+
+.photo-content {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border:
+        2px solid rgba(255, 255, 255, 0.35);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    backdrop-filter: blur(5px);
+
+    text-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* CLUB TITLE */
+
+.club-card h3 {
+    color: #0b1f3a;
+
+    font-size: 19px;
+
+    margin-bottom: 9px;
+}
+
+
+/* CLUB TAG */
+
+.tag {
+    display: inline-block;
+
+    background: #e7f1ff;
+
+    color: #1557a6;
+
+    padding: 5px 10px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* CLUB DESCRIPTION */
+
+.club-card p {
+    color: #60758a;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    min-height: 67px;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+   ===================================================== */
+
+.page-header {
+    background:
+        linear-gradient(
+            135deg,
+            #0b1f3a,
+            #1557a6
+        );
+
+    color: white;
+
+    padding: 65px 7%;
+
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #dcecff;
+
+    font-size: 16px;
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER
+   ===================================================== */
+
+.auth-page {
+    min-height:
+        calc(100vh - 76px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+
+    background: #f4f7fb;
+}
+
+
+/* LOGIN BOX */
+
+.login-box {
+    width: 430px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 16px;
+
+    border: 1px solid #d9e2ec;
+
+    box-shadow:
+        0 15px 40px
+        rgba(11, 31, 58, 0.12);
+
+    text-align: center;
+}
+
+
+/* LOGIN ICON */
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #e8eef6;
+
+    color: #1557a6;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+
+/* LOGIN TITLE */
+
+.login-box h1 {
+    color: #0b1f3a;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #60758a;
+
+    margin-bottom: 30px;
+}
+
+
+/* INPUT GROUP */
+
+.input-group {
+    text-align: left;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    color: #243b53;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #1557a6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(21, 87, 166, 0.1);
+}
+
+
+/* LOGIN BUTTON */
+
+.login-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #1557a6;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-button:hover {
+    background: #0b3d7a;
+}
+
+
+/* ERROR */
+
+.login-error {
+    background: #fff1f1;
+
+    color: #b42318;
+
+    padding: 12px;
+
+    border-radius: 7px;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+}
+
+
+/* REGISTER TEXT */
+
+.register-text {
+    margin-top: 25px;
+
+    color: #60758a;
+
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #1557a6;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    background: #071d38;
+
+    color: white;
+
+    padding: 30px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.footer-brand {
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+.footer-brand span {
+    color: #1687e8;
+}
+
+footer p {
+    color: #c9d7e7;
+
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.footer-links a {
+    color: white;
+
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #5fc4ff;
+}
+
+
+/* =====================================================
+   FLASH MESSAGE
+   ===================================================== */
+
+.flash {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    background: #1557a6;
+
+    color: white;
+
+    padding: 14px 20px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .logo-box {
+        width: 180px;
+        height: 95px;
+    }
+
+    .navlinks {
+        gap: 18px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .navlinks {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 55px 7%;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .logo-box {
+        width: 190px;
+        height: 100px;
+    }
+
+    .section-head {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .login-box {
+        width: 100%;
+
+        padding: 30px 22px;
+    }
+}
+/* ================================
+   POLISHED DASHBOARDS
+================================ */
+
+.dashboard-page{
+    min-height:calc(100vh - 76px);
+    background:#f4f7fb;
+    padding:45px 7% 65px;
+}
+
+.dashboard-header{
+    background:linear-gradient(135deg,#0b1f3a,#1557a6);
+    border-radius:16px;
+    padding:30px 35px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(11,31,58,.15);
+}
+
+.dashboard-label{
+    display:inline-block;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#8bd7ff;
+    margin-bottom:8px;
+}
+
+.dashboard-header h1{
+    font-size:32px;
+    margin-bottom:7px;
+}
+
+.dashboard-header p{
+    color:#dcecff;
+    font-size:14px;
+}
+
+.student-avatar{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#fff;
+    color:#1557a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:800;
+    flex-shrink:0;
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+.dashboard-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    background:#fff;
+    border:1px solid #dbe4ee;
+    border-radius:12px;
+    padding:22px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    box-shadow:0 6px 18px rgba(11,31,58,.06);
+}
+
+.stat-icon{
+    width:52px;
+    height:52px;
+    border-radius:11px;
+    background:#e7f1ff;
+    color:#1557a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    flex-shrink:0;
+}
+
+.stat-card h3{
+    color:#0b1f3a;
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.stat-card p{
+    color:#60758a;
+    font-size:13px;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.dashboard-panel{
+    background:#fff;
+    border:1px solid #dbe4ee;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 7px 20px rgba(11,31,58,.06);
+}
+
+.full-panel{
+    width:100%;
+}
+
+.panel-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:20px;
+    padding-bottom:17px;
+    border-bottom:1px solid #e5ebf2;
+}
+
+.panel-heading h2{
+    color:#0b1f3a;
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.panel-heading p{
+    color:#60758a;
+    font-size:13px;
+}
+
+.small-btn{
+    display:inline-block;
+    background:#1557a6;
+    color:#fff;
+    padding:9px 15px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.small-btn:hover{
+    background:#0b3d7a;
+}
+
+.dashboard-item{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:14px 0;
+    border-bottom:1px solid #edf1f5;
+}
+
+.dashboard-item:last-child{
+    border-bottom:none;
+}
+
+.item-icon,
+.club-avatar{
+    width:46px;
+    height:46px;
+    border-radius:10px;
+    background:#e7f1ff;
+    color:#1557a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+.item-info{
+    flex:1;
+}
+
+.item-info h3{
+    color:#0b1f3a;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.item-info p{
+    color:#60758a;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.status-badge{
+    background:#eaf7ef;
+    color:#18794e;
+    border-radius:20px;
+    padding:6px 10px;
+    font-size:11px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.empty-state{
+    text-align:center;
+    padding:30px 15px;
+}
+
+.empty-state > div{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.empty-state h3{
+    color:#0b1f3a;
+    margin-bottom:7px;
+    font-size:18px;
+}
+
+.empty-state p{
+    color:#60758a;
+    font-size:13px;
+    margin-bottom:17px;
+}
+
+.empty-state .small-btn{
+    display:inline-block;
+}
+
+.member-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #edf1f5;
+}
+
+.member-row:last-child{
+    border-bottom:none;
+}
+
+.profile-btn{
+    color:#1557a6;
+    border:1px solid #b9cde3;
+    padding:8px 13px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.profile-btn:hover{
+    background:#1557a6;
+    color:#fff;
+}
+
+/* Dashboard responsive */
+
+@media(max-width:900px){
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-stats{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .dashboard-page{
+        padding:30px 5% 50px;
+    }
+
+    .dashboard-header{
+        padding:25px 20px;
+    }
+
+    .dashboard-header h1{
+        font-size:25px;
+    }
+
+    .student-avatar{
+        width:55px;
+        height:55px;
+        font-size:22px;
+    }
+
+    .dashboard-panel{
+        padding:20px 17px;
+    }
+
+    .panel-heading{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .member-row{
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+
+    .profile-btn{
+        margin-left:61px;
+    }
+
+}
+/* ================================
+   GEHU NAVBAR LOGO
+================================ */
+
+.navbar-logo{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    margin-right:10px;
+    border-radius:5px;
+    background:#fff;
+}
+
+
+/* ================================
+   POLISHED DASHBOARDS
+================================ */
+
+.dashboard-page{
+    min-height:calc(100vh - 76px);
+    background:#f4f7fb;
+    padding:45px 7% 65px;
+}
+
+.dashboard-header{
+    background:linear-gradient(135deg,#0b1f3a,#1557a6);
+    border-radius:16px;
+    padding:30px 35px;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(11,31,58,.15);
+}
+
+.dashboard-label{
+    display:inline-block;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#8bd7ff;
+    margin-bottom:8px;
+}
+
+.dashboard-header h1{
+    font-size:32px;
+    margin-bottom:7px;
+}
+
+.dashboard-header p{
+    color:#dcecff;
+    font-size:14px;
+}
+
+.student-avatar{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#fff;
+    color:#1557a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    font-weight:800;
+    flex-shrink:0;
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
+}
+
+.dashboard-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.stat-card{
+    background:#fff;
+    border:1px solid #dbe4ee;
+    border-radius:12px;
+    padding:22px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    box-shadow:0 6px 18px rgba(11,31,58,.06);
+}
+
+.stat-icon{
+    width:52px;
+    height:52px;
+    border-radius:11px;
+    background:#e7f1ff;
+    color:#1557a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    flex-shrink:0;
+}
+
+.stat-card h3{
+    color:#0b1f3a;
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.stat-card p{
+    color:#60758a;
+    font-size:13px;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.dashboard-panel{
+    background:#fff;
+    border:1px solid #dbe4ee;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 7px 20px rgba(11,31,58,.06);
+}
+
+.full-panel{
+    width:100%;
+}
+
+.panel-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:20px;
+    padding-bottom:17px;
+    border-bottom:1px solid #e5ebf2;
+}
+
+.panel-heading h2{
+    color:#0b1f3a;
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.panel-heading p{
+    color:#60758a;
+    font-size:13px;
+}
+
+.small-btn{
+    display:inline-block;
+    background:#1557a6;
+    color:#fff;
+    padding:9px 15px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.small-btn:hover{
+    background:#0b3d7a;
+}
+
+.dashboard-item{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:14px 0;
+    border-bottom:1px solid #edf1f5;
+}
+
+.dashboard-item:last-child{
+    border-bottom:none;
+}
+
+.item-icon,
+.club-avatar{
+    width:46px;
+    height:46px;
+    border-radius:10px;
+    background:#e7f1ff;
+    color:#1557a6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    font-weight:bold;
+    flex-shrink:0;
+}
+
+.item-info{
+    flex:1;
+}
+
+.item-info h3{
+    color:#0b1f3a;
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.item-info p{
+    color:#60758a;
+    font-size:12px;
+    line-height:1.5;
+}
+
+.status-badge{
+    background:#eaf7ef;
+    color:#18794e;
+    border-radius:20px;
+    padding:6px 10px;
+    font-size:11px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.empty-state{
+    text-align:center;
+    padding:30px 15px;
+}
+
+.empty-state > div{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.empty-state h3{
+    color:#0b1f3a;
+    margin-bottom:7px;
+    font-size:18px;
+}
+
+.empty-state p{
+    color:#60758a;
+    font-size:13px;
+    margin-bottom:17px;
+}
+
+.empty-state .small-btn{
+    display:inline-block;
+}
+
+.member-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #edf1f5;
+}
+
+.member-row:last-child{
+    border-bottom:none;
+}
+
+.profile-btn{
+    color:#1557a6;
+    border:1px solid #b9cde3;
+    padding:8px 13px;
+    border-radius:6px;
+    font-size:12px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.profile-btn:hover{
+    background:#1557a6;
+    color:#fff;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-stats{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .dashboard-page{
+        padding:30px 5% 50px;
+    }
+
+    .dashboard-header{
+        padding:25px 20px;
+    }
+
+    .dashboard-header h1{
+        font-size:25px;
+    }
+
+    .student-avatar{
+        width:55px;
+        height:55px;
+        font-size:22px;
+    }
+
+    .dashboard-panel{
+        padding:20px 17px;
+    }
+
+    .panel-heading{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .member-row{
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+
+    .profile-btn{
+        margin-left:61px;
+    }
+
+}
+/* STUDENT REGISTRATION PAGE FIX */
+
+.student-register-page {
+    min-height: calc(100vh - 76px);
+    padding: 45px 20px;
+    background: #f1f5fb;
+}
+
+.student-form-card {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 38px 44px;
+    background: #ffffff;
+    border: 1px solid #dbe4ee;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(11, 31, 58, 0.12);
+}
+
+.student-form-heading {
+    text-align: center;
+}
+
+.student-form-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e7f0ff;
+    color: #1557a6;
+    border-radius: 15px;
+    font-size: 30px;
+}
+
+.student-form-label {
+    display: block;
+    color: #1557a6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.student-form-heading h1 {
+    font-size: 32px;
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.student-form-heading p {
+    color: #60758a;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.student-form-divider {
+    height: 1px;
+    background: #e5ebf2;
+    margin: 28px 0;
+}
+
+.form-section-title {
+    color: #0b1f3a;
+    font-size: 18px;
+    margin-bottom: 22px;
+}
+
+.student-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 22px;
+}
+
+.student-form-grid .input-group {
+    margin-bottom: 20px;
+    min-width: 0;
+}
+
+.student-form-grid .input-group label {
+    display: block;
+    color: #243b53;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.student-form-grid .input-group input,
+.student-form-grid .input-group select {
+    display: block;
+    width: 100%;
+    height: 47px;
+    padding: 0 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: #fff;
+    color: #19324f;
+    font-size: 14px;
+    outline: none;
+}
+
+.student-form-grid .input-group input:focus,
+.student-form-grid .input-group select:focus {
+    border-color: #1557a6;
+    box-shadow: 0 0 0 3px rgba(21, 87, 166, 0.12);
+}
+
+.student-form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.field-hint {
+    display: block;
+    margin-top: 7px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.student-submit-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 7px;
+    background: #1557a6;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.student-submit-btn:hover {
+    background: #0b3d7a;
+}
+
+.student-login-link {
+    margin-top: 22px;
+    text-align: center;
+    color: #60758a;
+    font-size: 13px;
+}
+
+.student-login-link a {
+    color: #1557a6;
+    font-weight: bold;
+}
+
+.student-page-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #718096;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+    .student-register-page {
+        padding: 25px 13px;
+    }
+
+    .student-form-card {
+        padding: 27px 20px;
+    }
+
+    .student-form-heading h1 {
+        font-size: 26px;
+    }
+
+    .student-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .student-form-grid .full-width {
+        grid-column: auto;
+    }
+}
+/* ==========================================
+   CAMPUSCONNECT - REGISTER PAGE
+   Modern Student & Club Cards
+========================================== */
+
+.register-page {
+    background: #f3f6fb;
+    color: #0b1f3a;
+}
+
+.register-page .navbar-logo {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+    object-fit: contain;
+    border-radius: 5px;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.register-main {
+    min-height: calc(100vh - 76px);
+    padding: 58px 7% 30px;
+    background:
+        radial-gradient(ellipse at 50% 0%, #e0ebff 0%, transparent 55%),
+        #f3f6fb;
+}
+
+.register-heading {
+    max-width: 720px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.register-eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #1557a6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.3px;
+}
+
+.register-heading h1 {
+    margin-bottom: 13px;
+    color: #0b1f3a;
+    font-size: 38px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.register-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #60758a;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.register-role-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    max-width: 970px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.register-role-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 30px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #dce5f0;
+    border-radius: 18px;
+    color: #0b1f3a;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(11, 31, 58, 0.06);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.register-role-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #0b3d7a, #1687e8);
+}
+
+.register-role-card:hover {
+    transform: translateY(-6px);
+    border-color: #9bbde8;
+    box-shadow: 0 18px 38px rgba(11, 31, 58, 0.13);
+}
+
+.register-role-card:focus-visible {
+    outline: 3px solid #1687e8;
+    outline-offset: 4px;
+}
+
+.register-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.register-role-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
+}
+
+.register-role-icon svg {
+    width: 43px;
+    height: 43px;
+}
+
+.student-icon {
+    background: #e6efff;
+    color: #1557a6;
+}
+
+.club-icon {
+    background: #e6f2ff;
+    color: #0b3d7a;
+}
+
+.register-card-number {
+    color: #cbd7e6;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.register-role-label {
+    margin-bottom: 9px;
+    color: #1557a6;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.register-role-card h2 {
+    margin: 0 0 12px;
+    color: #0b1f3a;
+    font-size: 23px;
+    line-height: 1.35;
+}
+
+.register-role-card p {
+    margin: 0 0 22px;
+    color: #60758a;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.register-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    margin: 0 0 27px;
+    padding: 0;
+    list-style: none;
+}
+
+.register-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #344b65;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.register-benefits li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e6f2ff;
+    color: #1557a6;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.register-card-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-top: auto;
+    padding: 15px 18px;
+    border-radius: 8px;
+    background: #1557a6;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+.register-card-button > span {
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.register-role-card:hover .register-card-button {
+    background: #0b3d7a;
+}
+
+.register-role-card:hover .register-card-button > span {
+    transform: translateX(4px);
+}
+
+.register-login-prompt {
+    margin: 30px auto 0;
+    color: #60758a;
+    text-align: center;
+    font-size: 14px;
+}
+
+.register-login-prompt a {
+    margin-left: 4px;
+    color: #1557a6;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.register-login-prompt a:hover {
+    text-decoration: underline;
+}
+
+.register-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid #dce5f0;
+    color: #718096;
+    font-size: 12px;
+}
+
+.register-footer-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 7px;
+    background: #0b1f3a;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.register-footer-dot {
+    color: #1557a6;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .register-main {
+        padding: 45px 5% 28px;
+    }
+
+    .register-role-cards {
+        gap: 18px;
+    }
+
+    .register-role-card {
+        padding: 24px;
+    }
+
+    .register-role-card h2 {
+        font-size: 21px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 620px) {
+    .register-main {
+        padding: 35px 18px 25px;
+    }
+
+    .register-heading {
+        margin-bottom: 28px;
+    }
+
+    .register-heading h1 {
+        font-size: 30px;
+    }
+
+    .register-heading p {
+        font-size: 14px;
+    }
+
+    .register-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .register-role-cards {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+        gap: 20px;
+    }
+
+    .register-role-card {
+        padding: 25px;
+    }
+
+    .register-card-top {
+        margin-bottom: 19px;
+    }
+
+    .register-role-icon {
+        width: 66px;
+        height: 66px;
+    }
+
+    .register-role-icon svg {
+        width: 38px;
+        height: 38px;
+    }
+
+    .register-footer {
+        line-height: 1.7;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .register-role-card,
+    .register-card-button,
+    .register-card-button > span {
+        transition: none;
+    }
+
+    .register-role-card:hover {
+        transform: none;
+    }
+}
+/* =========================================
+   CLUB SUCCESS PAGE - PREMIUM BLUE DESIGN
+========================================= */
+
+.club-success-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f3f6fb;
+    color: #0b1f3a;
+}
+
+.club-success-page .navbar-logo {
+    width: 42px;
+    height: 42px;
+    margin-right: 10px;
+    object-fit: contain;
+    border-radius: 5px;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+.club-success-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 20px;
+    background:
+        radial-gradient(ellipse at top, #e4eeff 0%, transparent 62%),
+        #f3f6fb;
+}
+
+.club-success-card {
+    width: 100%;
+    max-width: 620px;
+    padding: 38px 46px;
+    background: #ffffff;
+    border: 1px solid #dce5f0;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 15px 42px rgba(11, 31, 58, 0.10);
+}
+
+.club-success-logo {
+    width: 100px;
+    height: 62px;
+    margin: 0 auto 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #e5ebf2;
+    border-radius: 9px;
+}
+
+.club-success-logo img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.club-success-check {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1557a6;
+    background: #eaf2ff;
+    border-radius: 50%;
+}
+
+.club-success-check svg {
+    width: 52px;
+    height: 52px;
+}
+
+.club-success-eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: #1557a6;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.club-success-card h1 {
+    margin: 0 0 15px;
+    color: #0b1f3a;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.club-success-message {
+    max-width: 450px;
+    margin: 0 auto;
+    color: #60758a;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.club-success-divider {
+    height: 1px;
+    margin: 25px 0;
+    background: #e5ebf2;
+}
+
+.club-success-next {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 17px;
+    margin-bottom: 24px;
+    text-align: left;
+    background: #f5f8fd;
+    border: 1px solid #e2eaf5;
+    border-radius: 11px;
+}
+
+.club-success-next-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #e3edff;
+    font-size: 21px;
+}
+
+.club-success-next-text h2 {
+    margin: 2px 0 6px;
+    color: #0b1f3a;
+    font-size: 15px;
+}
+
+.club-success-next-text p {
+    margin: 0;
+    color: #60758a;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.club-success-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.club-success-login,
+.club-success-home {
+    min-height: 47px;
+    padding: 13px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+}
+
+.club-success-login {
+    background: #1557a6;
+    color: #fff;
+}
+
+.club-success-login span {
+    font-size: 19px;
+}
+
+.club-success-login:hover {
+    background: #0b3d7a;
+    transform: translateY(-1px);
+}
+
+.club-success-home {
+    background: #fff;
+    color: #1557a6;
+    border: 1px solid #cbd8e8;
+}
+
+.club-success-home:hover {
+    background: #edf4ff;
+}
+
+.club-success-welcome {
+    margin: 23px 0 0;
+    color: #718096;
+    font-size: 12px;
+}
+
+.club-success-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 24px 7%;
+    background: #071d38;
+    color: #fff;
+}
+
+.club-success-footer-brand .footer-brand {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.club-success-footer-brand .footer-brand span {
+    color: #1687e8;
+}
+
+.club-success-footer-brand p,
+.club-success-copyright {
+    margin-top: 6px;
+    color: #c9d7e7;
+    font-size: 12px;
+}
+
+.club-success-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.club-success-footer-links a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.club-success-footer-links a:hover {
+    color: #5fc4ff;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .club-success-main {
+        padding: 28px 14px;
+    }
+
+    .club-success-card {
+        padding: 29px 20px;
+        border-radius: 14px;
+    }
+
+    .club-success-card h1 {
+        font-size: 27px;
+    }
+
+    .club-success-logo {
+        width: 88px;
+        height: 55px;
+    }
+
+    .club-success-next {
+        padding: 13px;
+    }
+
+    .club-success-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .club-success-footer-links {
+        justify-content: center;
+    }
+}
+/* ======================================
+   CLUB DASHBOARD - PROFESSIONAL TABLE
+====================================== */
+
+.club-dashboard-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f3f6fb;
+    color: #0b1f3a;
+}
+
+.club-dashboard-main {
+    width: 86%;
+    max-width: 1500px;
+    margin: 35px auto 55px;
+    flex: 1;
+}
+
+.club-dashboard-hero {
+    padding: 34px 38px;
+    min-height: 155px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: #fff;
+    background: linear-gradient(115deg, #0b1f3a, #1557a6);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(11, 31, 58, .13);
+}
+
+.club-dashboard-eyebrow {
+    display: block;
+    margin-bottom: 13px;
+    color: #71d5ff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.club-dashboard-hero h1 {
+    margin: 0 0 9px;
+    font-size: 32px;
+    overflow-wrap: anywhere;
+}
+
+.club-dashboard-hero p {
+    color: #e1edff;
+    font-size: 14px;
+}
+
+.club-dashboard-avatar {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #1557a6;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.club-dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 25px 0 28px;
+}
+
+.club-stat-card {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #dce5f0;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(11, 31, 58, .045);
+}
+
+.club-stat-icon {
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #e8f1ff;
+    font-size: 24px;
+}
+
+.club-stat-card h2 {
+    margin-bottom: 5px;
+    color: #0b1f3a;
+    font-size: 22px;
+    overflow-wrap: anywhere;
+}
+
+.club-stat-card p {
+    color: #60758a;
+    font-size: 13px;
+}
+
+.club-members-panel,
+.club-details-panel {
+    margin-bottom: 25px;
+    padding: 27px;
+    background: #fff;
+    border: 1px solid #dce5f0;
+    border-radius: 14px;
+    box-shadow: 0 7px 22px rgba(11, 31, 58, .045);
+}
+
+.club-panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 23px;
+    padding-bottom: 19px;
+    border-bottom: 1px solid #e5ebf2;
+}
+
+.club-panel-heading h2 {
+    margin-bottom: 6px;
+    color: #0b1f3a;
+    font-size: 22px;
+}
+
+.club-panel-heading p {
+    color: #60758a;
+    font-size: 13px;
+}
+
+.club-view-all-btn,
+.club-empty-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 17px;
+    border-radius: 7px;
+    background: #1557a6;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background .2s;
+}
+
+.club-view-all-btn:hover,
+.club-empty-btn:hover {
+    background: #0b3d7a;
+}
+
+.club-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.club-members-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.club-members-table th {
+    padding: 15px 13px;
+    color: #52667e;
+    background: #f4f7fc;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.club-members-table th:first-child {
+    border-radius: 7px 0 0 7px;
+}
+
+.club-members-table th:last-child {
+    border-radius: 0 7px 7px 0;
+}
+
+.club-members-table td {
+    padding: 16px 13px;
+    border-bottom: 1px solid #e8edf4;
+    color: #354b63;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.club-members-table tbody tr:hover {
+    background: #f8faff;
+}
+
+.club-members-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.club-table-student {
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.club-table-student strong {
+    color: #0b1f3a;
+    font-size: 13px;
+}
+
+.club-table-avatar {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e3edff;
+    color: #1557a6;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.club-profile-btn {
+    display: inline-block;
+    padding: 9px 12px;
+    color: #1557a6;
+    background: #eaf2ff;
+    border: 1px solid #d4e4ff;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.club-profile-btn:hover {
+    color: #fff;
+    background: #1557a6;
+}
+
+.club-empty-state {
+    min-height: 220px;
+    padding: 35px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.club-empty-icon {
+    margin-bottom: 15px;
+    font-size: 38px;
+}
+
+.club-empty-state h3 {
+    margin-bottom: 8px;
+    color: #0b1f3a;
+    font-size: 19px;
+}
+
+.club-empty-state p {
+    max-width: 420px;
+    margin-bottom: 20px;
+    color: #60758a;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.club-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+}
+
+.club-detail-item {
+    min-width: 0;
+    padding: 17px 0;
+    border-bottom: 1px solid #e8edf4;
+}
+
+.club-detail-item span {
+    display: block;
+    margin-bottom: 8px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.club-detail-item strong,
+.club-detail-item p {
+    color: #0b1f3a;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.club-detail-description {
+    grid-column: 1 / -1;
+}
+
+.club-detail-description p {
+    line-height: 1.7;
+}
+
+.club-dashboard-footer {
+    margin-top: auto;
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #071d38;
+    color: #fff;
+}
+
+.club-dashboard-footer .footer-brand {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.club-dashboard-footer .footer-brand span {
+    color: #1687e8;
+}
+
+.club-dashboard-footer p {
+    margin-top: 5px;
+    color: #c9d7e7;
+    font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .club-dashboard-main {
+        width: 92%;
+    }
+
+    .club-dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .club-members-panel,
+    .club-details-panel {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .club-dashboard-main {
+        width: 94%;
+        margin-top: 22px;
+    }
+
+    .club-dashboard-hero {
+        padding: 25px 22px;
+    }
+
+    .club-dashboard-hero h1 {
+        font-size: 25px;
+    }
+
+    .club-dashboard-avatar {
+        width: 53px;
+        height: 53px;
+        font-size: 23px;
+    }
+
+    .club-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .club-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .club-detail-description {
+        grid-column: auto;
+    }
+
+    .club-dashboard-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* =========================================
+   PREMIUM STUDENT PROFILE - OPTION 3
+========================================= */
+
+.premium-profile-page {
+    min-height: 100vh;
+    background: #f1f5fb;
+    color: #0b1f3a;
+}
+
+.premium-profile-main {
+    width: 88%;
+    max-width: 1120px;
+    margin: 35px auto 45px;
+}
+
+.profile-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #7b8ba1;
+    font-size: 13px;
+}
+
+.profile-breadcrumb a {
+    color: #1557a6;
+    font-weight: 700;
+}
+
+.profile-breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.premium-profile-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #dce5f0;
+    border-radius: 20px;
+    box-shadow: 0 16px 45px rgba(11, 31, 58, .09);
+}
+
+/* BLUE GRADIENT COVER */
+
+.premium-profile-cover {
+    min-height: 180px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 30px 38px;
+    background: linear-gradient(115deg, #071d38 0%, #103e78 55%, #1768bd 100%);
+}
+
+.profile-cover-glow {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    right: 8%;
+    top: -155px;
+    border: 35px solid rgba(255, 255, 255, .07);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.profile-cover-label,
+.profile-cover-university {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.profile-cover-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.profile-status-dot {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #66d9ff;
+    box-shadow: 0 0 10px rgba(102, 217, 255, .7);
+}
+
+.profile-cover-university {
+    color: #c5e5ff;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+}
+
+/* PROFILE IDENTITY */
+
+.premium-profile-identity {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    padding: 0 38px 27px;
+    border-bottom: 1px solid #e9eef5;
+}
+
+.premium-profile-avatar {
+    width: 105px;
+    height: 105px;
+    flex-shrink: 0;
+    margin-top: -45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1768bd, #0b1f3a);
+    color: #fff;
+    font-size: 40px;
+    font-weight: 800;
+    box-shadow: 0 5px 18px rgba(11, 31, 58, .18);
+}
+
+.premium-profile-name {
+    min-width: 0;
+    flex: 1;
+    padding-top: 17px;
+}
+
+.premium-profile-kicker {
+    color: #3975b7;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.premium-profile-name h1 {
+    margin: 6px 0 7px;
+    color: #0b1f3a;
+    font-size: 27px;
+    overflow-wrap: anywhere;
+}
+
+.premium-profile-name p {
+    color: #64758b;
+    font-size: 14px;
+}
+
+.premium-profile-id {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px 19px;
+    border: 1px solid #dce8f7;
+    border-radius: 10px;
+    background: #f4f8ff;
+}
+
+.premium-profile-id span {
+    color: #71839a;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.premium-profile-id strong {
+    color: #1557a6;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+/* INFORMATION SECTION */
+
+.premium-profile-content {
+    padding: 30px 38px 35px;
+}
+
+.premium-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 23px;
+}
+
+.premium-section-kicker {
+    color: #3975b7;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+}
+
+.premium-section-heading h2 {
+    margin-top: 6px;
+    color: #0b1f3a;
+    font-size: 22px;
+}
+
+.premium-section-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #eaf2ff;
+    font-size: 23px;
+}
+
+.premium-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.premium-info-card {
+    min-width: 0;
+    min-height: 91px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid #e0e8f2;
+    border-radius: 12px;
+    background: #fff;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+}
+
+.premium-info-card:hover {
+    transform: translateY(-2px);
+    border-color: #a9c9f1;
+    box-shadow: 0 7px 18px rgba(21, 87, 166, .07);
+}
+
+.premium-info-icon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #edf4ff;
+    font-size: 21px;
+}
+
+.premium-info-text {
+    min-width: 0;
+}
+
+.premium-info-text span {
+    display: block;
+    margin-bottom: 7px;
+    color: #75859a;
+    font-size: 12px;
+}
+
+.premium-info-text strong {
+    display: block;
+    color: #102b4c;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+/* PROFILE NOTE */
+
+.premium-profile-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin-top: 24px;
+    padding: 17px 19px;
+    border: 1px solid #d9e8fb;
+    border-radius: 10px;
+    background: #f4f8ff;
+}
+
+.premium-note-icon {
+    font-size: 21px;
+}
+
+.premium-profile-note strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #153d6d;
+    font-size: 13px;
+}
+
+.premium-profile-note p {
+    color: #61758d;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ACTION BUTTONS */
+
+.premium-profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 27px;
+}
+
+.premium-back-btn,
+.premium-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 45px;
+    padding: 12px 20px;
+    border: 1px solid #1557a6;
+    border-radius: 8px;
+    background: #1557a6;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+}
+
+.premium-back-btn:hover {
+    background: #0b3d7a;
+    transform: translateY(-1px);
+}
+
+.premium-home-btn {
+    background: #fff;
+    color: #1557a6;
+}
+
+.premium-home-btn:hover {
+    background: #edf4ff;
+    transform: translateY(-1px);
+}
+
+.premium-profile-footer {
+    margin-top: 23px;
+    color: #7b8ba1;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 750px) {
+    .premium-profile-main {
+        width: 93%;
+        margin-top: 22px;
+    }
+
+    .premium-profile-cover {
+        min-height: 145px;
+        padding: 25px 22px;
+    }
+
+    .premium-profile-identity {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 22px 23px;
+    }
+
+    .premium-profile-avatar {
+        width: 83px;
+        height: 83px;
+        margin-top: -35px;
+        font-size: 31px;
+    }
+
+    .premium-profile-name {
+        flex-basis: calc(100% - 100px);
+        padding-top: 12px;
+    }
+
+    .premium-profile-name h1 {
+        font-size: 22px;
+    }
+
+    .premium-profile-id {
+        width: 100%;
+        margin-top: 4px;
+    }
+
+    .premium-profile-content {
+        padding: 25px 20px;
+    }
+
+    .premium-profile-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .premium-profile-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .premium-back-btn,
+    .premium-home-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .premium-profile-name h1 {
+        font-size: 19px;
+    }
+
+    .premium-profile-kicker {
+        font-size: 9px;
+    }
+
+    .premium-profile-content {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .premium-info-card {
+        padding: 13px;
+    }
+}
+
+/* CAMPUSCONNECT HOMEPAGE */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #102746;
+    background: #ffffff;
+}
+
+/* Navbar */
+.navbar {
+    height: 82px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.brand {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 800;
+    color: #102746;
+    letter-spacing: -1px;
+}
+
+.brand-connect {
+    color: #1764b5;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: #102746;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.navlinks a:hover {
+    color: #087cf0;
+}
+
+/* Hero */
+.hero {
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    padding: 65px 7%;
+    color: white;
+    background:
+        linear-gradient(90deg,
+        rgba(5, 32, 65, 0.94),
+        rgba(5, 42, 80, 0.68)),
+        url("/static/gehu-campus.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.university-name {
+    color: #50c7ff;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.08;
+    margin: 0 0 22px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #0797ff;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 17px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.btn-primary {
+    color: white;
+    background: #078cf5;
+}
+
+.btn-primary:hover {
+    background: #006dcc;
+}
+
+.btn-secondary {
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* Events and Clubs */
+.events-section,
+.clubs-section {
+    padding: 60px 7%;
+}
+
+.clubs-section {
+    background: #f5f8fc;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.section-heading p {
+    color: #61758d;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.view-all {
+    display: inline-block;
+    color: #075bb2;
+    border: 1px solid #1685f5;
+    border-radius: 25px;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.view-all:hover {
+    color: white;
+    background: #176bc0;
+}
+
+.event-grid,
+.club-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.event-card,
+.club-card {
+    background: white;
+    padding: 25px;
+    border: 1px solid #e5ebf3;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(20, 48, 80, 0.06);
+}
+
+.event-icon {
+    font-size: 32px;
+}
+
+.event-card h3,
+.club-card h3 {
+    font-size: 21px;
+    margin: 14px 0;
+}
+
+.event-card p,
+.club-card p {
+    color: #61758d;
+    line-height: 1.6;
+}
+
+.club-category {
+    color: #087cf0 !important;
+    font-weight: 700;
+}
+
+.event-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: #087cf0;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    padding: 25px;
+    text-align: center;
+    color: #dce8f7;
+    background: #102746;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+    .navbar {
+        height: auto;
+        min-height: 75px;
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .brand {
+        font-size: 25px;
+    }
+
+    .navlinks {
+        gap: 18px;
+    }
+
+    .navlinks a {
+        font-size: 15px;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 50px 5%;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .events-section,
+    .clubs-section {
+        padding: 40px 5%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .event-grid,
+    .club-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* =====================================================
+   CAMPUSCONNECT - REAL PHOTO CARD STYLES
+   Add photos inside the existing club/event card wrappers.
+   ===================================================== */
+
+/* Shared image wrapper names used by the homepage cards */
+.card-image,
+.event-image,
+.club-image,
+.club-photo,
+.event-top {
+    width: 100%;
+    height: 190px;
+    margin: 0 0 16px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    background: #e7eef7;
+}
+
+/* Images fill the complete card image area */
+.card-image img,
+.event-image img,
+.club-image img,
+.club-photo img,
+.event-top img,
+.event-card > img,
+.club-card > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 190px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    transition: transform 0.35s ease;
+}
+
+/* Subtle hover effect */
+.event-card:hover .card-image img,
+.event-card:hover .event-image img,
+.event-card:hover .event-top img,
+.event-card:hover > img,
+.club-card:hover .card-image img,
+.club-card:hover .club-image img,
+.club-card:hover .club-photo img,
+.club-card:hover > img {
+    transform: scale(1.04);
+}
+
+/* Cards with photos should not add unnecessary padding above the image */
+.event-card:has(.card-image),
+.event-card:has(.event-image),
+.event-card:has(.event-top img),
+.club-card:has(.card-image),
+.club-card:has(.club-image),
+.club-card:has(.club-photo img) {
+    padding: 0;
+}
+
+.event-card:has(.card-image) .event-body,
+.event-card:has(.event-image) .event-body,
+.event-card:has(.event-top img) .event-body {
+    padding: 18px;
+}
+
+.club-card:has(.card-image) .club-card-content,
+.club-card:has(.club-image) .club-card-content,
+.club-card:has(.club-photo img) .club-card-content {
+    padding: 0 18px 18px;
+}
+
+/* If the HTML uses .event-top as a photo wrapper, remove the old icon styling */
+.event-top:has(img) {
+    display: block;
+    height: 190px;
+    background: #e7eef7;
+}
+
+.event-top img {
+    min-height: 190px;
+}
+
+/* Keep card text and buttons aligned */
+.event-card,
+.club-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.event-card h3,
+.club-card h3 {
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.event-card p,
+.club-card p {
+    line-height: 1.65;
+}
+
+/* Keyboard focus and reduced motion */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #1687e8;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-image img,
+    .event-image img,
+    .club-image img,
+    .club-photo img,
+    .event-top img {
+        transition: none;
+    }
+
+    .event-card:hover img,
+    .club-card:hover img {
+        transform: none;
+    }
+}
+
+/* Mobile card image sizing */
+@media (max-width: 700px) {
+    .card-image,
+    .event-image,
+    .club-image,
+    .club-photo,
+    .event-top {
+        height: 200px;
+    }
+
+    .card-image img,
+    .event-image img,
+    .club-image img,
+    .club-photo img,
+    .event-top img,
+    .event-card > img,
+    .club-card > img {
+        min-height: 200px;
+    }
+}
+
+/* VIEW DETAILS AND REGISTER BUTTONS */
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-top: 18px;
+}
+
+.card-button {
+    flex: 1;
+    text-align: center;
+    padding: 11px 8px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.card-button.view-details {
+    background: #eaf3ff;
+    color: #087de5;
+    border: 1px solid #087de5;
+}
+
+.card-button.view-details:hover {
+    background: #087de5;
+    color: white;
+}
+
+.card-button.register-now {
+    background: #087de5;
+    color: white;
+    border: 1px solid #087de5;
+}
+
+.card-button.register-now:hover {
+    background: #0565bd;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 400px) {
+    .card-actions {
+        gap: 6px;
+    }
+
+    .card-button {
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+}
+
+/* =========================================
+   CAMPUSCONNECT CLUBS PAGE
+========================================= */
+
+.clubs-page {
+    background: #f5f7fc;
+    color: #172033;
+}
+
+/* Hero section */
+
+.clubs-hero {
+    padding: 65px 8% 55px;
+    background: linear-gradient(120deg, #10264d, #1768b2);
+    color: white;
+}
+
+.clubs-hero-content {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.clubs-eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #b9dcff;
+    margin-bottom: 14px;
+}
+
+.clubs-hero h1 {
+    font-size: 42px;
+    margin: 0 0 14px;
+    color: white;
+}
+
+.clubs-hero h1 span {
+    color: #8bc5ff;
+}
+
+.clubs-hero p {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #e5efff;
+}
+
+/* Clubs container */
+
+.clubs-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 30px 75px;
+}
+
+.clubs-section-heading {
+    margin-bottom: 28px;
+}
+
+.clubs-section-heading h2 {
+    font-size: 28px;
+    color: #172b4d;
+    margin-bottom: 8px;
+}
+
+.clubs-section-heading p {
+    color: #667085;
+    font-size: 15px;
+}
+
+/* Three-column grid */
+
+.clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* Individual card */
+
+.campus-club-card {
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    box-shadow: 0 5px 18px rgba(20, 40, 80, 0.07);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.campus-club-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(20, 40, 80, 0.13);
+}
+
+/* Fixed-size image */
+
+.campus-club-image {
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    background: #e8eef7;
+}
+
+.campus-club-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Card information */
+
+.campus-club-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.campus-club-category {
+    display: inline-block;
+    width: fit-content;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #eaf3ff;
+    color: #1262ad;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.campus-club-content h3 {
+    color: #172b4d;
+    font-size: 21px;
+    margin: 0 0 10px;
+}
+
+.campus-club-description {
+    color: #687386;
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0 0 20px;
+    flex: 1;
+}
+
+/* Buttons */
+
+.campus-club-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.campus-club-actions a {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    text-decoration: none;
+    padding: 11px 8px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.club-details-btn {
+    color: #1268bd;
+    background: #edf5ff;
+    border: 1px solid #b9d9ff;
+}
+
+.club-details-btn:hover {
+    background: #dcecff;
+}
+
+.club-join-btn {
+    color: white;
+    background: #0879df;
+    border: 1px solid #0879df;
+}
+
+.club-join-btn:hover {
+    background: #075eaf;
+}
+
+/* Empty clubs message */
+
+.clubs-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 45px 20px;
+    background: white;
+    border-radius: 12px;
+}
+
+/* Footer */
+
+.clubs-footer {
+    padding: 30px 8%;
+    background: #10264d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.clubs-footer p {
+    color: #d5e3f5;
+    font-size: 13px;
+}
+
+.clubs-footer .footer-brand {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.clubs-footer .footer-brand span {
+    color: #83c0ff;
+}
+
+.clubs-footer .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.clubs-footer .footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.clubs-footer .footer-links a:hover {
+    color: #83c0ff;
+}
+
+/* Tablet */
+
+@media (max-width: 950px) {
+    .clubs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .clubs-hero {
+        padding: 45px 22px;
+    }
+
+    .clubs-hero h1 {
+        font-size: 32px;
+    }
+
+    .clubs-container {
+        padding: 35px 18px 50px;
+    }
+
+    .clubs-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .campus-club-image {
+        height: 190px;
+    }
+
+    .clubs-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+

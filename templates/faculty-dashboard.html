@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Dashboard | CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f7fc;
+            font-family: Arial, sans-serif;
+            color: #183153;
+        }
+
+        .faculty-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .faculty-sidebar {
+            width: 245px;
+            background: #10264b;
+            color: white;
+            padding: 25px 16px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .faculty-brand {
+            font-size: 21px;
+            font-weight: bold;
+            padding: 8px 10px 30px;
+            border-bottom: 1px solid #ffffff25;
+        }
+
+        .faculty-brand span {
+            color: #65a5ff;
+        }
+
+        .faculty-sidebar nav {
+            margin-top: 28px;
+        }
+
+        .faculty-sidebar nav a {
+            display: block;
+            color: #e3ecfb;
+            text-decoration: none;
+            padding: 14px 13px;
+            border-radius: 9px;
+            margin-bottom: 9px;
+            transition: 0.2s;
+        }
+
+        .faculty-sidebar nav a:hover,
+        .faculty-sidebar nav a.active {
+            background: #2166c2;
+            color: white;
+        }
+
+        .faculty-sidebar .logout-link {
+            margin-top: auto;
+            color: #ffb8b8;
+        }
+
+        .faculty-main {
+            flex: 1;
+            min-width: 0;
+            padding: 28px;
+        }
+
+        .faculty-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .faculty-topbar h2 {
+            margin: 0;
+            font-size: 23px;
+        }
+
+        .faculty-topbar p {
+            margin: 6px 0 0;
+            color: #718096;
+        }
+
+        .faculty-user {
+            background: white;
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 3px 12px #1c376010;
+        }
+
+        .faculty-welcome {
+            padding: 30px;
+            border-radius: 16px;
+            background: linear-gradient(120deg, #dceaff, #eef4ff);
+            margin-bottom: 24px;
+        }
+
+        .faculty-welcome h1 {
+            margin: 0 0 10px;
+            font-size: 28px;
+            color: #12366d;
+        }
+
+        .faculty-welcome p {
+            margin: 0;
+            color: #526984;
+        }
+
+        .faculty-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .faculty-stat {
+            background: white;
+            padding: 23px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px #1c376010;
+            border: 1px solid #e8eef7;
+        }
+
+        .faculty-stat .number {
+            font-size: 30px;
+            font-weight: bold;
+            color: #2166c2;
+            margin-bottom: 7px;
+        }
+
+        .faculty-stat p {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .faculty-section {
+            background: white;
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px #1c376010;
+            border: 1px solid #e8eef7;
+            scroll-margin-top: 20px;
+        }
+
+        .faculty-section h2 {
+            margin: 0 0 18px;
+            font-size: 20px;
+        }
+
+        .faculty-club-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .faculty-club-card {
+            border: 1px solid #e4eaf3;
+            padding: 18px;
+            border-radius: 12px;
+            background: #fbfdff;
+        }
+
+        .faculty-club-card h3 {
+            margin: 0 0 9px;
+            color: #1c4f91;
+        }
+
+        .faculty-club-card p {
+            color: #718096;
+            font-size: 14px;
+            margin: 7px 0;
+        }
+
+        .faculty-count {
+            display: inline-block;
+            background: #e7f0ff;
+            color: #2166c2;
+            padding: 7px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .faculty-table-wrap {
+            overflow-x: auto;
+        }
+
+        .faculty-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        .faculty-table th,
+        .faculty-table td {
+            padding: 13px 12px;
+            text-align: left;
+            border-bottom: 1px solid #edf1f7;
+            font-size: 14px;
+        }
+
+        .faculty-table th {
+            background: #f3f7fd;
+            color: #315477;
+        }
+
+        .faculty-table td {
+            color: #526477;
+        }
+
+        .faculty-event {
+            padding: 14px 0;
+            border-bottom: 1px solid #edf1f7;
+        }
+
+        .faculty-event:last-child {
+            border-bottom: none;
+        }
+
+        .faculty-event h3 {
+            margin: 0 0 7px;
+            font-size: 16px;
+        }
+
+        .faculty-event p {
+            margin: 0;
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .faculty-profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .profile-detail {
+            background: #f6f9fe;
+            padding: 14px;
+            border-radius: 9px;
+        }
+
+        .profile-detail small {
+            display: block;
+            color: #718096;
+            margin-bottom: 6px;
+        }
+
+        .profile-detail strong {
+            overflow-wrap: anywhere;
+        }
+
+        .faculty-empty {
+            padding: 20px;
+            background: #f7f9fc;
+            border-radius: 10px;
+            color: #718096;
+            text-align: center;
+        }
+
+        @media (max-width: 850px) {
+            .faculty-sidebar {
+                width: 190px;
+            }
+
+            .faculty-main {
+                padding: 18px;
+            }
+
+            .faculty-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .faculty-layout {
+                display: block;
+            }
+
+            .faculty-sidebar {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .faculty-brand {
+                padding-bottom: 15px;
+            }
+
+            .faculty-sidebar nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                margin-top: 15px;
+            }
+
+            .faculty-sidebar nav a {
+                padding: 10px;
+                margin: 0;
+                font-size: 13px;
+            }
+
+            .faculty-sidebar .logout-link {
+                margin-top: 0;
+            }
+
+            .faculty-main {
+                padding: 15px;
+            }
+
+            .faculty-topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .faculty-welcome h1 {
+                font-size: 23px;
+            }
+
+            .faculty-profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="faculty-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="faculty-sidebar">
+
+        <div class="faculty-brand">
+            🎓 Campus<span>Connect</span>
+            <small style="display:block;font-size:11px;font-weight:normal;margin-top:5px;">
+                GEHU Faculty Portal
+            </small>
+        </div>
+
+        <nav>
+            <a href="#dashboard" class="active">🏠 Dashboard</a>
+            <a href="#clubs">👥 My Clubs</a>
+            <a href="#students">🎓 Club Students</a>
+            <a href="#events">📅 Campus Events</a>
+            <a href="#profile">👤 My Profile</a>
+        </nav>
+
+        <a href="{{ url_for('logout') }}" class="logout-link">
+            ↪ Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="faculty-main">
+
+        <!-- TOP BAR -->
+        <div class="faculty-topbar">
+            <div>
+                <h2>Faculty Dashboard</h2>
+                <p>CampusConnect Management Portal</p>
+            </div>
+
+            <div class="faculty-user">
+                👤 {{ faculty.name }}
+            </div>
+        </div>
+
+
+        <!-- WELCOME -->
+        <section class="faculty-welcome" id="dashboard">
+            <h1>Welcome, {{ faculty.name }}!</h1>
+            <p>
+                Manage your assigned clubs, connect with students
+                and stay updated with campus activities.
+            </p>
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="faculty-stats">
+
+            <div class="faculty-stat">
+                <div class="number">{{ total_clubs }}</div>
+                <p>Assigned Clubs</p>
+            </div>
+
+            <div class="faculty-stat">
+                <div class="number">{{ total_students }}</div>
+                <p>Club Students</p>
+            </div>
+
+            <div class="faculty-stat">
+                <div class="number">{{ upcoming_events|length }}</div>
+                <p>Campus Events</p>
+            </div>
+
+        </section>
+
+
+        <!-- MY CLUBS -->
+        <section class="faculty-section" id="clubs">
+
+            <h2>⭐ My Assigned Clubs</h2>
+
+            {% if assigned_clubs %}
+
+                <div class="faculty-club-grid">
+
+                    {% for club in assigned_clubs %}
+
+                        <div class="faculty-club-card">
+
+                            <h3>{{ club.name }}</h3>
+
+                            <p>
+                                Category: {{ club.category or 'Not specified' }}
+                            </p>
+
+                            <p>
+                                Coordinator: {{ club.faculty or faculty.name }}
+                            </p>
+
+                            <span class="faculty-count">
+                                {{ club.member_count }} Members
+                            </span>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="faculty-empty">
+                    No clubs have been assigned to your account yet.
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- CLUB STUDENTS -->
+        <section class="faculty-section" id="students">
+
+            <h2>🎓 Students in My Clubs</h2>
+
+            {% if students %}
+
+                <div class="faculty-table-wrap">
+                    <table class="faculty-table">
+
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Student ID</th>
+                                <th>Department</th>
+                                <th>Year</th>
+                                <th>Club</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {% for student in students %}
+                                <tr>
+                                    <td>{{ student.name }}</td>
+                                    <td>{{ student.student_id }}</td>
+                                    <td>{{ student.department }}</td>
+                                    <td>{{ student.year }}</td>
+                                    <td>{{ student.club_name }}</td>
+                                    <td>{{ student.email }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+
+            {% else %}
+
+                <div class="faculty-empty">
+                    No students found in your assigned clubs.
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- EVENTS -->
+        <section class="faculty-section" id="events">
+
+            <h2>📅 Campus Events</h2>
+
+            {% if upcoming_events %}
+
+                {% for event in upcoming_events %}
+
+                    <div class="faculty-event">
+
+                        <h3>
+                            {{ event.icon or '🎉' }}
+                            {{ event.name }}
+                        </h3>
+
+                        <p>
+                            📆 {{ event.date }}
+                            &nbsp; | &nbsp;
+                            🕒 {{ event.time }}
+                            &nbsp; | &nbsp;
+                            📍 {{ event.venue }}
+                        </p>
+
+                        {% if event.description %}
+                            <p style="margin-top:8px;">
+                                {{ event.description }}
+                            </p>
+                        {% endif %}
+
+                    </div>
+
+                {% endfor %}
+
+            {% else %}
+
+                <div class="faculty-empty">
+                    No campus events are available right now.
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <!-- FACULTY PROFILE -->
+        <section class="faculty-section" id="profile">
+
+            <h2>👤 Faculty Profile</h2>
+
+            <div class="faculty-profile-grid">
+
+                <div class="profile-detail">
+                    <small>Full Name</small>
+                    <strong>{{ faculty.name }}</strong>
+                </div>
+
+                <div class="profile-detail">
+                    <small>Employee ID</small>
+                    <strong>{{ faculty.employee_id }}</strong>
+                </div>
+
+                <div class="profile-detail">
+                    <small>Department</small>
+                    <strong>{{ faculty.department }}</strong>
+                </div>
+
+                <div class="profile-detail">
+                    <small>University Email</small>
+                    <strong>{{ faculty.email }}</strong>
+                </div>
+
+                <div class="profile-detail">
+                    <small>Phone Number</small>
+                    <strong>{{ faculty.phone }}</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer style="text-align:center;color:#8795a8;padding:15px;">
+            CampusConnect | Graphic Era Hill University
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>

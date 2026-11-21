@@ -1,0 +1,443 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ event.name }} | CampusConnect</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #F5F3FF;
+            color: #282344;
+        }
+
+        nav {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+
+        .logo {
+            color: #282344;
+            font-size: 23px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #7657D7;
+        }
+
+        nav a:last-child {
+            color: #59449D;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero {
+            padding: 65px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(120deg, #17152F, #7657D7);
+        }
+
+        .hero small {
+            color: #D9CEFF;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .hero .icon {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #EAE4FF;
+            font-size: 15px;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1000px;
+            margin: 45px auto;
+        }
+
+        .details-card {
+            background: white;
+            padding: 35px;
+            border-radius: 13px;
+            box-shadow: 0 6px 24px rgba(40,25,90,.07);
+        }
+
+        h2 {
+            font-size: 23px;
+            margin-bottom: 13px;
+            color: #282344;
+        }
+
+        .description {
+            color: #716B88;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .info-box {
+            background: #F8F6FF;
+            padding: 20px;
+            border-radius: 9px;
+            border: 1px solid #E9E2FF;
+        }
+
+        .info-box small {
+            display: block;
+            color: #827B9B;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .info-box strong {
+            color: #49377F;
+            font-size: 15px;
+        }
+
+        .fee-section {
+            margin-top: 30px;
+            padding: 24px;
+            background: #F8F6FF;
+            border: 1px solid #E5DCFF;
+            border-radius: 10px;
+        }
+
+        .fee-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .fee-amount {
+            font-size: 28px;
+            font-weight: bold;
+            color: #7657D7;
+            margin: 12px 0;
+        }
+
+        .fee-note {
+            color: #716B88;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .demo-note {
+            margin-top: 14px;
+            padding: 12px;
+            background: #FFF8E8;
+            border: 1px solid #F1DFB8;
+            border-radius: 7px;
+            color: #795B22;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .highlight {
+            margin-top: 28px;
+            padding: 22px;
+            background: #F0ECFF;
+            border-left: 4px solid #7657D7;
+            border-radius: 7px;
+        }
+
+        .highlight h3 {
+            color: #49377F;
+            margin-bottom: 9px;
+        }
+
+        .highlight p {
+            color: #716B88;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .register {
+            background: #7657D7;
+            color: white;
+        }
+
+        .register:hover {
+            background: #6042BD;
+        }
+
+        .back {
+            background: #F0ECFF;
+            color: #6042BD;
+            border: 1px solid #CFC0FF;
+        }
+
+        .already-registered {
+            margin-top: 25px;
+            padding: 16px;
+            background: #EAF8EF;
+            border: 1px solid #BCE5C9;
+            color: #246B3B;
+            border-radius: 8px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .login-message {
+            margin-top: 20px;
+            padding: 15px;
+            background: #F0ECFF;
+            border-radius: 8px;
+            color: #49377F;
+            line-height: 1.6;
+        }
+
+        .flash-message {
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            background: #F0ECFF;
+            color: #49377F;
+            border-radius: 7px;
+        }
+
+        footer {
+            background: #17152F;
+            color: #EAE4FF;
+            text-align: center;
+            padding: 23px;
+            font-size: 13px;
+            margin-top: 60px;
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 {
+                font-size: 27px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .details-card {
+                padding: 22px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a class="logo" href="{{ url_for('home') }}">
+        Campus<span>Connect</span>
+    </a>
+
+    <a href="{{ url_for('events_page') }}">← All Events</a>
+</nav>
+
+<section class="hero">
+    <small>CAMPUS CONNECT • GEHU EVENT</small>
+
+    <div class="icon">{{ event.icon }}</div>
+
+    <h1>{{ event.name }}</h1>
+
+    <p>Be a part of the experience. Learn, participate and connect.</p>
+</section>
+
+<main class="container">
+
+    <section class="details-card">
+
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        <h2>About This Event</h2>
+
+        <p class="description">
+            {{ event.description or 'Join us for this exciting campus event and get an opportunity to participate, learn and connect with fellow students.' }}
+        </p>
+
+        <h2 style="margin-top:30px;">Event Information</h2>
+
+        <div class="info-grid">
+
+            <div class="info-box">
+                <small>Event Name</small>
+                <strong>{{ event.name }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Date</small>
+                <strong>{{ event.date }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Time</small>
+                <strong>{{ event.time }}</strong>
+            </div>
+
+            <div class="info-box">
+                <small>Venue</small>
+                <strong>{{ event.venue }}</strong>
+            </div>
+
+        </div>
+
+        <div class="fee-section">
+
+            <h2>Event Registration Fee</h2>
+
+            {% if event.fee|default(0)|float > 0 %}
+                <div class="fee-amount">
+                    ₹{{ "%.2f"|format(event.fee|float) }}
+                </div>
+
+                <p class="fee-note">
+                    Registration for this event requires a fee.
+                    Continue to the demo payment confirmation to complete registration.
+                </p>
+            {% else %}
+                <div class="fee-amount">FREE</div>
+
+                <p class="fee-note">
+                    This event has no registration fee.
+                    You can register without payment.
+                </p>
+            {% endif %}
+
+            <div class="demo-note">
+                <strong>Demo Project Notice:</strong>
+                Payment confirmation on this website is simulated.
+                No real money will be deducted or transferred.
+            </div>
+
+        </div>
+
+        <div class="highlight">
+            <h3>Don't Miss the Opportunity!</h3>
+            <p>
+                Take part in campus activities, interact with other students
+                and make your university experience memorable.
+                Register to participate in this event.
+            </p>
+        </div>
+
+        {% if session.get("student_email") %}
+
+            {% if registration %}
+                <div class="already-registered">
+                    ✓ You are already registered for this event!
+                    <br>
+                    Check your student dashboard for registration details.
+                </div>
+
+            {% else %}
+
+                <form method="POST"
+                      action="{{ url_for('register_event', event_id=event.id) }}">
+
+                    <div class="actions">
+
+                        {% if event.fee|default(0)|float > 0 %}
+                        <input type="hidden" name="demo_payment_confirmed" value="yes">
+                            <button type="submit" class="btn register">
+                                Confirm Demo Payment & Register
+                            </button>
+                        {% else %}
+                            <button type="submit" class="btn register">
+                                Register for Free
+                            </button>
+                        {% endif %}
+
+                        <a class="btn back"
+                           href="{{ url_for('events_page') }}">
+                            Explore Other Events
+                        </a>
+
+                    </div>
+
+                </form>
+
+            {% endif %}
+
+        {% else %}
+
+            <div class="login-message">
+                Please log in with your student account to register for this event.
+            </div>
+
+            <div class="actions">
+                <a class="btn register" href="{{ url_for('login') }}">
+                    Student Login
+                </a>
+
+                <a class="btn back" href="{{ url_for('events_page') }}">
+                    Explore Other Events
+                </a>
+            </div>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 CampusConnect | Graphic Era Hill University
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clubs - CampusConnect</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #172b4d;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 100%;
+            min-height: 72px;
+            padding: 15px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 700;
+            color: #0b1f3a;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #1557a6;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 27px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #263b5b;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1557a6;
+        }
+
+        .nav-links .get-started {
+            background: #1557a6;
+            color: white;
+            padding: 11px 19px;
+            border-radius: 6px;
+        }
+
+        .nav-links .get-started:hover {
+            background: #0b1f3a;
+            color: white;
+        }
+
+        /* HERO */
+
+        .clubs-hero {
+            min-height: 260px;
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(5, 24, 52, 0.83),
+                    rgba(12, 53, 105, 0.83)
+                ),
+                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=85")
+                center/cover no-repeat;
+        }
+
+        .clubs-hero-content {
+            max-width: 750px;
+        }
+
+        .clubs-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 13px;
+            color: #c7dcff;
+        }
+
+        .clubs-hero-content h1 {
+            font-size: 36px;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .clubs-hero-content h1 span {
+            color: #80b7ff;
+        }
+
+        .clubs-hero-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #e3edff;
+        }
+
+        /* MAIN SECTION */
+
+        .clubs-container {
+            width: 86%;
+            max-width: 1200px;
+            margin: 55px auto;
+        }
+
+        .clubs-section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .clubs-section-heading h2 {
+            font-size: 26px;
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .clubs-section-heading p {
+            font-size: 14px;
+            color: #68778d;
+            line-height: 1.6;
+        }
+
+        /* CLUB GRID */
+
+        .clubs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        /* CLUB CARD */
+
+        .campus-club-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(16, 42, 80, 0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .campus-club-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 26px rgba(16, 42, 80, 0.13);
+        }
+
+        /* IMAGE */
+
+        .campus-club-image {
+            width: 100%;
+            height: 175px;
+            overflow: hidden;
+            background: #e7edf5;
+        }
+
+        .campus-club-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .campus-club-card:hover .campus-club-image img {
+            transform: scale(1.04);
+        }
+
+        /* CONTENT */
+
+        .campus-club-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .campus-club-category {
+            display: inline-block;
+            width: fit-content;
+            background: #eaf2ff;
+            color: #1557a6;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 6px 11px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .campus-club-content h3 {
+            font-size: 19px;
+            color: #0b1f3a;
+            margin-bottom: 9px;
+        }
+
+        .campus-club-description {
+            font-size: 14px;
+            color: #68778d;
+            line-height: 1.6;
+            min-height: 66px;
+            margin-bottom: 18px;
+        }
+
+        /* BUTTONS */
+
+        .club-card-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .club-details-btn,
+        .club-join-btn {
+            flex: 1;
+            min-width: 0;
+            text-align: center;
+            text-decoration: none;
+            padding: 11px 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .club-details-btn {
+            background: #1557a6;
+            color: white;
+        }
+
+        .club-details-btn:hover {
+            background: #0b1f3a;
+        }
+
+        .club-join-btn {
+            background: #eaf2ff;
+            color: #1557a6;
+            border: 1px solid #1557a6;
+        }
+
+        .club-join-btn:hover {
+            background: #1557a6;
+            color: white;
+        }
+
+        /* EMPTY MESSAGE */
+
+        .no-clubs {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 10px;
+            color: #68778d;
+        }
+
+        /* FOOTER */
+
+        .clubs-footer {
+            background: #0b1f3a;
+            color: #dce7f7;
+            text-align: center;
+            padding: 23px 15px;
+            margin-top: 60px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .clubs-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .clubs-container {
+                width: 90%;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 15px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 13px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .clubs-hero {
+                min-height: 230px;
+                padding: 45px 18px;
+            }
+
+            .clubs-hero-content h1 {
+                font-size: 29px;
+            }
+
+            .clubs-hero-content p {
+                font-size: 14px;
+            }
+
+            .clubs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .clubs-container {
+                width: 90%;
+                margin: 40px auto;
+            }
+
+            .clubs-section-heading h2 {
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="{{ url_for('home') }}" class="logo">
+        Campus<span>Connect</span>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="{{ url_for('home') }}">Home</a>
+
+        <a href="{{ url_for('events_page') }}">Events</a>
+
+        <a href="{{ url_for('clubs_page') }}" class="active">Clubs</a>
+
+        <a href="{{ url_for('login') }}">Login</a>
+
+        <a href="{{ url_for('register') }}">Register</a>
+
+        <a href="{{ url_for('register') }}" class="get-started">
+            Get Started
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+
+<section class="clubs-hero">
+
+    <div class="clubs-hero-content">
+
+        <span class="clubs-eyebrow">
+            CAMPUS CONNECT
+        </span>
+
+        <h1>
+            Explore Our <span>Clubs</span>
+        </h1>
+
+        <p>
+            Discover your interests, develop new skills and become
+            a part of the GEHU campus community.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CLUBS SECTION -->
+
+<main class="clubs-container">
+
+    <div class="clubs-section-heading">
+
+        <h2>University Clubs</h2>
+
+        <p>
+            Explore different communities and connect with students
+            who share your interests and passion.
+        </p>
+
+    </div>
+
+
+    <div class="clubs-grid">
+
+        {% for club in clubs[:6] %}
+
+        {% set club_name = club.name|lower %}
+        {% set category = (club.category or '')|lower %}
+
+        {% set club_image = '' %}
+
+
+        <!-- IMAGE SELECTION -->
+
+        {% if 'uttaryini' in club_name
+           or 'uttrayini' in club_name
+           or 'uttarakhand' in club_name
+           or 'chanchari' in club_name %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'swaragini' in club_name %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'dance folks' in club_name or 'dance' in club_name or 'dance' in category %}
+
+            {% set club_image = 'https://azimpremjiuniversity.edu.in/imager/photos/pages/student-activities/1013953/CRX-MELA-NOV-2023-4_4b32b63c5c28c858e051e9d1a2a717a1.JPG' %}
+
+        {% elif 'literary' in club_name or 'book' in club_name or 'literature' in category %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'coding' in club_name or 'codex' in club_name or 'technology' in category or 'tech' in category %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'sport' in club_name or 'sport' in category %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'music' in club_name or 'music' in category %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'photography' in club_name or 'photo' in category or 'photo' in club_name %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'art' in club_name or 'art' in category or 'painting' in club_name %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=85' %}
+
+        {% elif 'cultural' in club_name or 'cultural' in category %}
+
+            {% set club_image = 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=85' %}
+
+        {% else %}
+
+            {% set fallback_images = [
+                'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85',
+                'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85',
+                'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=85',
+                'https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=900&q=85'
+            ] %}
+
+            {% set club_image = fallback_images[loop.index0 % 4] %}
+
+        {% endif %}
+
+
+        <article class="campus-club-card">
+
+            <!-- CLUB IMAGE -->
+
+            <div class="campus-club-image">
+
+                <img
+                    src="{{ club_image }}"
+                    alt="{{ club.name }}"
+                    loading="lazy">
+
+            </div>
+
+
+            <!-- CLUB CONTENT -->
+
+            <div class="campus-club-content">
+
+                <span class="campus-club-category">
+                    {{ club.category or 'University Club' }}
+                </span>
+
+                <h3>
+                    {{ club.name }}
+                </h3>
+
+                <p class="campus-club-description">
+                    {{ club.description or 'Explore activities, develop your skills and connect with fellow students through this club.' }}
+                </p>
+
+
+                <!-- BUTTONS -->
+
+                <div class="club-card-buttons">
+
+                    <a
+                        href="{{ url_for('club_details', club_id=club.id) }}"
+                        class="club-details-btn">
+                        View Details
+                    </a>
+
+                    <a
+                        href="{{ url_for('join_club', club_id=club.id) }}"
+                        class="club-join-btn">
+                        Join Club
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        {% else %}
+
+        <div class="no-clubs">
+
+            <h3>No clubs available right now.</h3>
+
+            <p>Please check again later.</p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="clubs-footer">
+
+    <p>
+        © 2026 CampusConnect | Graphic Era Hill University
+    </p>
+
+</footer>
+
+
+</body>
+</html>
